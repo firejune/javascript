@@ -1,17 +1,17 @@
-# Airbnb JavaScript Style Guide() {
+# Airbnb JavaScript 스타일 가이드() {
 
-*A mostly reasonable approach to JavaScript*
+*자바 스크립트에 대한 가장 합리적인 접근 방식*
 
 [![Downloads](https://img.shields.io/npm/dm/eslint-config-airbnb.svg)](https://www.npmjs.com/package/eslint-config-airbnb)
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/airbnb/javascript?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-Other Style Guides
+다른 스타일 가이드들
  - [ES5](es5/)
  - [React](react/)
  - [CSS & Sass](https://github.com/airbnb/css)
  - [Ruby](https://github.com/airbnb/ruby)
 
-## Table of Contents
+## 목차
 
   1. [Types](#types)
   1. [References](#references)
@@ -52,7 +52,7 @@ Other Style Guides
 
 ## Types
 
-  - [1.1](#1.1) <a name='1.1'></a> **Primitives**: When you access a primitive type you work directly on its value.
+  - [1.1](#1.1) <a name='1.1'></a> **Primitives**: 원시형(Primitive type)은 그 값을 직접 조작합니다.
 
     + `string`
     + `number`
@@ -68,7 +68,7 @@ Other Style Guides
 
     console.log(foo, bar); // => 1, 9
     ```
-  - [1.2](#1.2) <a name='1.2'></a> **Complex**: When you access a complex type you work on a reference to its value.
+  - [1.2](#1.2) <a name='1.2'></a> **Complex**: 참조형(Complex type)은 참조를 통해 값을 조작합니다.
 
     + `object`
     + `array`
@@ -87,9 +87,9 @@ Other Style Guides
 
 ## References
 
-  - [2.1](#2.1) <a name='2.1'></a> Use `const` for all of your references; avoid using `var`.
+  - [2.1](#2.1) <a name='2.1'></a> 모든 참조에는 `const`를 사용하고 `var`를 사용하지 않습니다.
 
-    > Why? This ensures that you can't reassign your references, which can lead to bugs and difficult to comprehend code.
+    > 왜죠? 참조를 다시 할당할 수 없으므로, 버그로 연결되거나 이해하기 어려운 코드가 되는 것을 방지합니다.
 
     eslint rules: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html).
 
@@ -103,9 +103,9 @@ Other Style Guides
     const b = 2;
     ```
 
-  - [2.2](#2.2) <a name='2.2'></a> If you must reassign references, use `let` instead of `var`.
+  - [2.2](#2.2) <a name='2.2'></a> 참조를 다시 할당해야 하는 경우 `var` 대신에 `let`을 사용하세요.
 
-    > Why? `let` is block-scoped rather than function-scoped like `var`.
+    > 왜죠? `var`는 함수-범위(function-scoped)이고 `let`은 블록-범위(block-scoped)이기 때문입니다.
 
     eslint rules: [`no-var`](http://eslint.org/docs/rules/no-var.html).
 
@@ -123,10 +123,10 @@ Other Style Guides
     }
     ```
 
-  - [2.3](#2.3) <a name='2.3'></a> Note that both `let` and `const` are block-scoped.
+  - [2.3](#2.3) <a name='2.3'></a> `let`과 `const`는 모두 블록-범위(block-scoped)인 것에 주의해야 합니다.
 
     ```javascript
-    // const and let only exist in the blocks they are defined in.
+    // const와 let은 선언 된 블록 안에서만 존재함. 
     {
       let a = 1;
       const b = 1;
@@ -139,7 +139,7 @@ Other Style Guides
 
 ## Objects
 
-  - [3.1](#3.1) <a name='3.1'></a> Use the literal syntax for object creation.
+  - [3.1](#3.1) <a name='3.1'></a> 개체를 만들 때에는 리터럴 구문을 사용합니다.
 
     eslint rules: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html).
 
@@ -151,7 +151,7 @@ Other Style Guides
     const item = {};
     ```
 
-  - [3.2](#3.2) <a name='3.2'></a> If your code will be executed in browsers in script context, don't use [reserved words](http://es5.github.io/#x7.6.1) as keys. It won't work in IE8. [More info](https://github.com/airbnb/javascript/issues/61). It’s OK to use them in ES6 modules and server-side code.
+  - [3.2](#3.2) <a name='3.2'></a> 코드가 브라우저에서 실행되는 경우 [예약어](http://es5.github.io/#x7.6.1)를 키로 사용하지 마세요. 이것은 IE8에서 작동하지 않습니다. [More info](https://github.com/airbnb/javascript/issues/61). ES6 모듈과 서버 사이드에서는 사용할 수 있습니다.
 
     ```javascript
     // bad
@@ -167,7 +167,7 @@ Other Style Guides
     };
     ```
 
-  - [3.3](#3.3) <a name='3.3'></a> Use readable synonyms in place of reserved words.
+  - [3.3](#3.3) <a name='3.3'></a> 예약어 대신에 알기 쉬운 동의어(Readable synonyms)를 사용하십세오.
 
     ```javascript
     // bad
@@ -187,9 +187,9 @@ Other Style Guides
     ```
 
   <a name="es6-computed-properties"></a>
-  - [3.4](#3.4) <a name='3.4'></a> Use computed property names when creating objects with dynamic property names.
+  - [3.4](#3.4) <a name='3.4'></a> 동적인 속성 이름을 가진 객체를 만들 때에는 계산된 속성 이름(Computed property names)을 사용하세요.
 
-    > Why? They allow you to define all the properties of an object in one place.
+    > 왜죠? 이렇게하면 객체 속성을 1개의 장소에서 정의 할 수 있습니다.
 
     ```javascript
 
@@ -213,7 +213,7 @@ Other Style Guides
     ```
 
   <a name="es6-object-shorthand"></a>
-  - [3.5](#3.5) <a name='3.5'></a> Use object method shorthand.
+  - [3.5](#3.5) <a name='3.5'></a> 메소드에 단축 구문(Shorthand)을 사용하세요.
 
     eslint rules: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html).
 
@@ -238,9 +238,9 @@ Other Style Guides
     ```
 
   <a name="es6-object-concise"></a>
-  - [3.6](#3.6) <a name='3.6'></a> Use property value shorthand.
+  - [3.6](#3.6) <a name='3.6'></a> 속성에 단축 구문을 사용하세요.
 
-    > Why? It is shorter to write and descriptive.
+    > 왜죠? 표현이나 설명이 간결해지기 때문입니다.
 
     eslint rules: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html).
 
@@ -258,9 +258,9 @@ Other Style Guides
     };
     ```
 
-  - [3.7](#3.7) <a name='3.7'></a> Group your shorthand properties at the beginning of your object declaration.
+  - [3.7](#3.7) <a name='3.7'></a> 속성의 단축 구문은 객체 선언의 시작 부분에 무리를 지어줍니다.
 
-    > Why? It's easier to tell which properties are using the shorthand.
+    > 왜죠? 어떤 속성이 단축 구문을 사용하고 있는지를 알기가 쉽기 때문입니다.
 
     ```javascript
     const anakinSkywalker = 'Anakin Skywalker';
@@ -287,9 +287,9 @@ Other Style Guides
     };
     ```
 
-  - [3.8](#3.8) <a name="3.8"></a> Only quote properties that are invalid identifiers.
+  - [3.8](#3.8) <a name="3.8"></a> 이용한 속성에 작은 따옴표를 사용하는 경우는 오직 잘못된 식별자인 경우에만 사용합니다.
 
-  > Why? In general we consider it subjectively easier to read. It improves syntax highlighting, and is also more easily optimized by many JS engines.
+  > 왜죠? 주관적으로 쉽게 읽을 수 있는 것을 항상 고민해야 합니다. 이 것은 구문이 강조되고, 수많은 JS엔진에 쉽게 최적화되어 있습니다.
 
   eslint rules: [`quote-props`](http://eslint.org/docs/rules/quote-props.html).
 
@@ -313,7 +313,7 @@ Other Style Guides
 
 ## Arrays
 
-  - [4.1](#4.1) <a name='4.1'></a> Use the literal syntax for array creation.
+  - [4.1](#4.1) <a name='4.1'></a> 배열을 만들 때 리터럴 구문을 사용하세요.
 
     eslint rules: [`no-array-constructor`](http://eslint.org/docs/rules/no-array-constructor.html).
 
@@ -325,7 +325,7 @@ Other Style Guides
     const items = [];
     ```
 
-  - [4.2](#4.2) <a name='4.2'></a> Use Array#push instead of direct assignment to add items to an array.
+  - [4.2](#4.2) <a name='4.2'></a> 배열에 항목을 직접 대체하지 말고 Array#push를 사용하세요.
 
     ```javascript
     const someStack = [];
@@ -338,7 +338,7 @@ Other Style Guides
     ```
 
   <a name="es6-array-spreads"></a>
-  - [4.3](#4.3) <a name='4.3'></a> Use array spreads `...` to copy arrays.
+  - [4.3](#4.3) <a name='4.3'></a> 배열을 복사하는 경우, 배열의 확장 연산자인 `...`을 사용하세요.
 
     ```javascript
     // bad
@@ -353,7 +353,7 @@ Other Style Guides
     // good
     const itemsCopy = [...items];
     ```
-  - [4.4](#4.4) <a name='4.4'></a> To convert an array-like object to an array, use Array#from.
+  - [4.4](#4.4) <a name='4.4'></a> array-like 객체를 배열로 변환하려면 Array#from을 사용하세요.
 
     ```javascript
     const foo = document.querySelectorAll('.foo');
@@ -364,9 +364,9 @@ Other Style Guides
 
 ## Destructuring
 
-  - [5.1](#5.1) <a name='5.1'></a> Use object destructuring when accessing and using multiple properties of an object.
+  - [5.1](#5.1) <a name='5.1'></a> 여러 속성에서 객체에 접근할 때 객체 구조화 대입을 사용하세요.
 
-    > Why? Destructuring saves you from creating temporary references for those properties.
+    > 왜죠? 구조화 대입을 이용하여 그 속성에 대한 중간 참조를 줄일 수 있습니다.
 
     ```javascript
     // bad
@@ -389,7 +389,7 @@ Other Style Guides
     }
     ```
 
-  - [5.2](#5.2) <a name='5.2'></a> Use array destructuring.
+  - [5.2](#5.2) <a name='5.2'></a> 배열의 구조 대입(Destructuring)을 사용하세요.
 
     ```javascript
     const arr = [1, 2, 3, 4];
@@ -402,9 +402,9 @@ Other Style Guides
     const [first, second] = arr;
     ```
 
-  - [5.3](#5.3) <a name='5.3'></a> Use object destructuring for multiple return values, not array destructuring.
+  - [5.3](#5.3) <a name='5.3'></a> 여러 값을 반환하는 경우, 배열의 구조 대입이 아니라 객체의 구조 대입을 사용하세요.
 
-    > Why? You can add new properties over time or change the order of things without breaking call sites.
+    > 왜죠? 이렇게하면 나중에 새 속성을 추가하거나 호출에 영향을 주지않고 순서를 변경할 수 있습니다.
 
     ```javascript
     // bad
@@ -431,7 +431,7 @@ Other Style Guides
 
 ## Strings
 
-  - [6.1](#6.1) <a name='6.1'></a> Use single quotes `''` for strings.
+  - [6.1](#6.1) <a name='6.1'></a> 문자열에는 작은 따옴표`''`를 사용하세요.
 
     eslint rules: [`quotes`](http://eslint.org/docs/rules/quotes.html).
 
@@ -443,8 +443,8 @@ Other Style Guides
     const name = 'Capt. Janeway';
     ```
 
-  - [6.2](#6.2) <a name='6.2'></a> Strings that cause the line to go over 100 characters should be written across multiple lines using string concatenation.
-  - [6.3](#6.3) <a name='6.3'></a> Note: If overused, long strings with concatenation could impact performance. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40).
+  - [6.2](#6.2) <a name='6.2'></a> 100자 이상의 문자열은 문자열 연결을 사용하여 여러 행에 걸쳐 기술할 수 있습니다.
+  - [6.3](#6.3) <a name='6.3'></a> 주의: 문자열 연결이 많으면 성능에 영향을 줄 수 있습니다. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40).
 
     ```javascript
     // bad
@@ -463,9 +463,9 @@ Other Style Guides
     ```
 
   <a name="es6-template-literals"></a>
-  - [6.4](#6.4) <a name='6.4'></a> When programmatically building up strings, use template strings instead of concatenation.
+  - [6.4](#6.4) <a name='6.4'></a> 프로그램에서 문자열을 생성하는 경우, 문자열 연결이 아니라 template strings을 사용하세요.
 
-    > Why? Template strings give you a readable, concise syntax with proper newlines and string interpolation features.
+    > 왜죠? Template strings 문자열 완성 기능과 다중 문자열 기능을 가진 간결한 구문으로 가독성이 좋아지기 때문입니다.
 
     eslint rules: [`prefer-template`](http://eslint.org/docs/rules/prefer-template.html).
 
@@ -485,16 +485,16 @@ Other Style Guides
       return `How are you, ${name}?`;
     }
     ```
-  - [6.5](#6.5) <a name='6.5'></a> Never use `eval()` on a string, it opens too many vulnerabilities.
+  - [6.5](#6.5) <a name='6.5'></a> 절대로 `eval()`을 사용하지 않습니다. 이것은 지금까지 수많은 취약점을 만들어 왔기 때문입니다.
 
 **[⬆ back to top](#table-of-contents)**
 
 
 ## Functions
 
-  - [7.1](#7.1) <a name='7.1'></a> Use function declarations instead of function expressions.
+  - [7.1](#7.1) <a name='7.1'></a> 함수 선언 대신에 함수 표현식을 사용합니다.
 
-    > Why? Function declarations are named, so they're easier to identify in call stacks. Also, the whole body of a function declaration is hoisted, whereas only the reference of a function expression is hoisted. This rule makes it possible to always use [Arrow Functions](#arrow-functions) in place of function expressions.
+    > 왜죠? 이름이 붙은 함수 선언은 콜스택에서 쉽게 알수 있습니다. 또한 함수 선언의 몸 전체가 Hoist됩니다. 반면 함수는 참조만 Hoist됩니다. 이 규칙은 함수 부분을 항상 [Arrow Functions](#arrow-functions)로 대체 사용할 수 있습니다.
 
     ```javascript
     // bad
@@ -506,7 +506,7 @@ Other Style Guides
     }
     ```
 
-  - [7.2](#7.2) <a name='7.2'></a> Function expressions:
+  - [7.2](#7.2) <a name='7.2'></a> 함수식(Function expressions):
 
     ```javascript
     // immediately-invoked function expression (IIFE)
@@ -515,9 +515,9 @@ Other Style Guides
     })();
     ```
 
-  - [7.3](#7.3) <a name='7.3'></a> Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.
+  - [7.3](#7.3) <a name='7.3'></a> 함수 이외의 블록 (if 나 while 등)에 함수를 선언하지 마세오. 브라우저는 변수에 함수를 할당하는 것을 처리할 수는 있지만, 모두 다르게 해석됩니다.
 
-  - [7.4](#7.4) <a name='7.4'></a> **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
+  - [7.4](#7.4) <a name='7.4'></a> **주의:** ECMA-262에서 `block`은 statements 목록에 정의되지만, 함수 선언은 statements가 없습니다. [이 문제는 ECMA-262의 설명을 참조하세요](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
     // bad
@@ -536,7 +536,7 @@ Other Style Guides
     }
     ```
 
-  - [7.5](#7.5) <a name='7.5'></a> Never name a parameter `arguments`. This will take precedence over the `arguments` object that is given to every function scope.
+  - [7.5](#7.5) <a name='7.5'></a> 매개변수(parameter)에 `arguments`를 절대 지정하지 않습니다. 이것은 함수 Scope로 전달 될 `arguments`객체의 참조를 덮어 써버릴 것입니다.
 
     ```javascript
     // bad
@@ -551,9 +551,9 @@ Other Style Guides
     ```
 
   <a name="es6-rest"></a>
-  - [7.6](#7.6) <a name='7.6'></a> Never use `arguments`, opt to use rest syntax `...` instead.
+  - [7.6](#7.6) <a name='7.6'></a> `arguments`를 사용하지 않습니다. 대신 rest syntax인 `...`을 사용하세요.
 
-    > Why? `...` is explicit about which arguments you want pulled. Plus rest arguments are a real Array and not Array-like like `arguments`.
+    > 왜죠? `...` 를 이용하여 여러가지 매개변수를 모두 사용할 수 있습니다. 추가로 rest 매개변수인 `arguments`는 Array-like 객체가 아니라 진정한 Array입니다.
 
     ```javascript
     // bad
@@ -569,7 +569,7 @@ Other Style Guides
     ```
 
   <a name="es6-default-parameters"></a>
-  - [7.7](#7.7) <a name='7.7'></a> Use default parameter syntax rather than mutating function arguments.
+  - [7.7](#7.7) <a name='7.7'></a> 함수의 매개변수를 조작하지 말고 기본 매개변수를 사용하세요.
 
     ```javascript
     // really bad
@@ -595,9 +595,9 @@ Other Style Guides
     }
     ```
 
-  - [7.8](#7.8) <a name='7.8'></a> Avoid side effects with default parameters.
+  - [7.8](#7.8) <a name='7.8'></a> 부작용이 있는 기본 매개변수를 사용하지 않습니다.
 
-    > Why? They are confusing to reason about.
+    > 왜죠? 혼란스럽기 때문입니다.
 
     ```javascript
     var b = 1;
@@ -611,7 +611,7 @@ Other Style Guides
     count();  // 3
     ```
 
-  - [7.9](#7.9) <a name='7.9'></a> Always put default parameters last.
+  - [7.9](#7.9) <a name='7.9'></a> 항상 기본 매개변수는 앞쪽에 배치하세요.
 
     ```javascript
     // bad
@@ -625,9 +625,9 @@ Other Style Guides
     }
     ```
 
-  - [7.10](#7.10) <a name='7.10'></a> Never use the Function constructor to create a new function.
+  - [7.10](#7.10) <a name='7.10'></a> 새로운 함수를 만드는 데 Function 생성자를 사용하지 않습니다.
 
-    > Why? Creating a function in this way evaluates a string similarly to eval(), which opens vulnerabilities.
+    > 왜죠? 이 방법은 문자열을 구분하는 새로운 함수를 만들 수 있는 eval()과 같은 취약점이 발생할 수 있습니다.
 
     ```javascript
     // bad
@@ -637,9 +637,9 @@ Other Style Guides
     var subtract = Function('a', 'b', 'return a - b');
     ```
 
-  - [7.11](#7.11) <a name="7.11"></a> Spacing in a function signature.
+  - [7.11](#7.11) <a name="7.11"></a> 함수에 사용되는 공백
 
-    > Why? Consistency is good, and you shouldn’t have to add or remove a space when adding or removing a name.
+    > 왜죠? 일관성이 좋고, 함수이름을 추가 하거나 삭제할 때 공백을 제거할 필요가 없습니다.
 
     ```javascript
     // bad
@@ -652,9 +652,9 @@ Other Style Guides
     const y = function a() {};
     ```
 
-  - [7.12](#7.12) <a name="7.12"></a> Never mutate parameters.
+  - [7.12](#7.12) <a name="7.12"></a> 절대로 매개변수를 조작하지 않습니다.
 
-    > Why? Manipulating objects passed in as parameters can cause unwanted variable side effects in the original caller.
+    > 왜죠? 매개변수로 전달 된 객체를 조작하는 것은 원래의 호출에 원치 않는 변수 부작용을 일으킬 수 있습니다.
 
     eslint rules: [`no-param-reassign`](http://eslint.org/docs/rules/no-param-reassign.html).
 
@@ -670,9 +670,9 @@ Other Style Guides
     };
     ```
 
-  - [7.13](#7.13) <a name="7.13"></a> Never reassign parameters.
+  - [7.13](#7.13) <a name="7.13"></a> 절대로 매개변수를 다시 지정하지 않습니다.
 
-    > Why? Reassigning parameters can lead to unexpected behavior, especially when accessing the `arguments` object. It can also cause optimization issues, especially in V8.
+    > 왜죠? `arguments` 객체에 접근하는 경우 다시 지정된 매개변수는 예기치 않은 동작이 발생할 수 있습니다. 그리고 특히 V8 최적화에 문제가 발생할 수 있습니다.
 
     eslint rules: [`no-param-reassign`](http://eslint.org/docs/rules/no-param-reassign.html).
 
@@ -699,11 +699,11 @@ Other Style Guides
 
 ## Arrow Functions
 
-  - [8.1](#8.1) <a name='8.1'></a> When you must use function expressions (as when passing an anonymous function), use arrow function notation.
+  - [8.1](#8.1) <a name='8.1'></a> (익명 함수 통과와 같은) 함수를 이용하는 경우, Arrow 함수를 사용하세요.
 
-    > Why? It creates a version of the function that executes in the context of `this`, which is usually what you want, and is a more concise syntax.
+    > 왜죠? 애로우 함수는 함수가 실행되는 컨텍스트의 `this`를 속박합니다. 이것은 일반적으로 예상대로 작동하고 구문이 더 간결합니다.
 
-    > Why not? If you have a fairly complicated function, you might move that logic out into its own function declaration.
+    > 언제 쓰죠? 복잡한 함수 논리를 정의한 함수의 바깥쪽으로 이동하고 싶은 경우.
 
     eslint rules: [`prefer-arrow-callback`](http://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](http://eslint.org/docs/rules/arrow-spacing.html).
 
@@ -721,11 +721,11 @@ Other Style Guides
     });
     ```
 
-  - [8.2](#8.2) <a name='8.2'></a> If the function body consists of a single expression, omit the braces and use the implicit return. Otherwise, keep the braces and use a `return` statement.
+  - [8.2](#8.2) <a name='8.2'></a> 함수의 본체가 하나의 식으로 구성되어있는 경우 중괄호를 생략하고 암묵적 return을 사용할 수 있습니다. 그렇지 않으면 `return` 문을 사용해야 합니다.
 
-    > Why? Syntactic sugar. It reads well when multiple functions are chained together.
+    > 왜죠? 가독성이 좋아지기 때문입니다. 여러 함수가 연결되는 경우에 쉽게 읽을 수 있습니다.
 
-    > Why not? If you plan on returning an object.
+    > 언제 쓰죠? 객체를 반환하는 경우.
 
     eslint rules: [`arrow-parens`](http://eslint.org/docs/rules/arrow-parens.html), [`arrow-body-style`](http://eslint.org/docs/rules/arrow-body-style.html).
 
@@ -746,9 +746,9 @@ Other Style Guides
     });
     ```
 
-  - [8.3](#8.3) <a name='8.3'></a> In case the expression spans over multiple lines, wrap it in parentheses for better readability.
+  - [8.3](#8.3) <a name='8.3'></a> 식의 길이가 여러 행에 걸치는 경우 가독성을 향상시키기 위해 괄호 안에 써주세요.
 
-    > Why? It shows clearly where the function starts and ends.
+    > 왜죠? 함수의 시작과 끝 부분을 알아보기 쉽게 합니다.
 
     ```js
     // bad
@@ -765,9 +765,9 @@ Other Style Guides
     ```
 
 
-  - [8.4](#8.4) <a name='8.4'></a> If your function takes a single argument and doesn’t use braces, omit the parentheses. Otherwise, always include parentheses around arguments.
+  - [8.4](#8.4) <a name='8.4'></a> 함수의 인수가 1개인 경우 괄호를 생략할 수 있습니다.
 
-    > Why? Less visual clutter.
+    > 왜죠? 시각적 혼란이 덜하기 때문입니다.
 
     eslint rules: [`arrow-parens`](http://eslint.org/docs/rules/arrow-parens.html).
 
@@ -802,9 +802,9 @@ Other Style Guides
 
 ## Constructors
 
-  - [9.1](#9.1) <a name='9.1'></a> Always use `class`. Avoid manipulating `prototype` directly.
+  - [9.1](#9.1) <a name='9.1'></a> `prototype`의 직접 조작을 피하고 항상 `class`를 사용하세요.
 
-    > Why? `class` syntax is more concise and easier to reason about.
+    > 왜죠? `class` 구문은 간결하고 의도를 알아내기가 쉽기 때문입니다.
 
     ```javascript
     // bad
@@ -831,9 +831,9 @@ Other Style Guides
     }
     ```
 
-  - [9.2](#9.2) <a name='9.2'></a> Use `extends` for inheritance.
+  - [9.2](#9.2) <a name='9.2'></a> 상속은 `extends`를 사용하세요.
 
-    > Why? It is a built-in way to inherit prototype functionality without breaking `instanceof`.
+    > 왜죠? 프로토타입을 상속하기 위해 내장된 방식으로 `instanceof` 를 파괴할 수 없기 때문입니다.
 
     ```javascript
     // bad
@@ -854,7 +854,7 @@ Other Style Guides
     }
     ```
 
-  - [9.3](#9.3) <a name='9.3'></a> Methods can return `this` to help with method chaining.
+  - [9.3](#9.3) <a name='9.3'></a> 메소드의 반환 값에 `this`를 돌려주는 것으로, 메소드 체인을 할 수 있습니다.
 
     ```javascript
     // bad
@@ -891,7 +891,7 @@ Other Style Guides
     ```
 
 
-  - [9.4](#9.4) <a name='9.4'></a> It's okay to write a custom toString() method, just make sure it works successfully and causes no side effects.
+  - [9.4](#9.4) <a name='9.4'></a> 사용자화 된 toString() 메소드를 쓰는 것도 좋습니다. 단, 제대로 작동하는지, 부작용이 없는 지를 꼭 확인하세요.
 
     ```javascript
     class Jedi {
@@ -914,9 +914,9 @@ Other Style Guides
 
 ## Modules
 
-  - [10.1](#10.1) <a name='10.1'></a> Always use modules (`import`/`export`) over a non-standard module system. You can always transpile to your preferred module system.
+  - [10.1](#10.1) <a name='10.1'></a> 비표준 모듈 시스템이 아니라면 항상 (`import`/`export`) 를 사용하세요. 이렇게 함으로써 원하는 모듈 시스템에 언제든지 transpile 할 수 있습니다.
 
-    > Why? Modules are the future, let's start using the future now.
+    > 왜죠? 모듈은 곧 미래입니다. 미래를 선점하고 사용합시다.
 
     ```javascript
     // bad
@@ -932,9 +932,9 @@ Other Style Guides
     export default es6;
     ```
 
-  - [10.2](#10.2) <a name='10.2'></a> Do not use wildcard imports.
+  - [10.2](#10.2) <a name='10.2'></a> 와일드카드를 이용한 가져오기는 사용하지 않습니다.
 
-    > Why? This makes sure you have a single default export.
+    > 왜죠? single default export인 것에 주의할 필요가 있기 때문입니다.
 
     ```javascript
     // bad
@@ -944,9 +944,9 @@ Other Style Guides
     import AirbnbStyleGuide from './AirbnbStyleGuide';
     ```
 
-  - [10.3](#10.3) <a name='10.3'></a>And do not export directly from an import.
+  - [10.3](#10.3) <a name='10.3'></a>import 문에서 직접 export하지 않습니다.
 
-    > Why? Although the one-liner is concise, having one clear way to import and one clear way to export makes things consistent.
+    > 왜죠? 한개의 라인이라 간결하기는 하지만, import와 export하는 방법을 명확하게 함으로써 일관성을 유지할 수 있습니다.
 
     ```javascript
     // bad
@@ -963,9 +963,9 @@ Other Style Guides
 
 ## Iterators and Generators
 
-  - [11.1](#11.1) <a name='11.1'></a> Don't use iterators. Prefer JavaScript's higher-order functions like `map()` and `reduce()` instead of loops like `for-of`.
+  - [11.1](#11.1) <a name='11.1'></a> iterators를 사용하지 않습니다. `for-of` 루프 대신  `map()`과 `reduce()`같은 Javascript의 고급 함수(higher-order functions)을 사용하세요.
 
-    > Why? This enforces our immutable rule. Dealing with pure functions that return values is easier to reason about than side-effects.
+    > 왜죠? 이것은 immutable(불변)의 규칙을 적용합니다. 값을 반환하는 함수를 처리하는 것이 부작용을 추측하기가 더 쉽습니다.
 
     eslint rules: [`no-iterator`](http://eslint.org/docs/rules/no-iterator.html).
 
@@ -990,16 +990,16 @@ Other Style Guides
     sum === 15;
     ```
 
-  - [11.2](#11.2) <a name='11.2'></a> Don't use generators for now.
+  - [11.2](#11.2) <a name='11.2'></a> 현재 generators는 사용하지 않습니다.
 
-    > Why? They don't transpile well to ES5.
+    > 왜죠? ES5의 transpile이 잘 작동하지 않습니다.
 
 **[⬆ back to top](#table-of-contents)**
 
 
 ## Properties
 
-  - [12.1](#12.1) <a name='12.1'></a> Use dot notation when accessing properties.
+  - [12.1](#12.1) <a name='12.1'></a> 속성에 접근하려면 점을 사용하세요.
 
     eslint rules: [`dot-notation`](http://eslint.org/docs/rules/dot-notation.html).
 
@@ -1016,7 +1016,7 @@ Other Style Guides
     const isJedi = luke.jedi;
     ```
 
-  - [12.2](#12.2) <a name='12.2'></a> Use subscript notation `[]` when accessing properties with a variable.
+  - [12.2](#12.2) <a name='12.2'></a> 변수를 사용하여 속성에 접근하려면 대괄호`[]`를 사용하세요.
 
     ```javascript
     const luke = {
@@ -1036,7 +1036,7 @@ Other Style Guides
 
 ## Variables
 
-  - [13.1](#13.1) <a name='13.1'></a> Always use `const` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
+  - [13.1](#13.1) <a name='13.1'></a> 변수를 선언 할 때는 항상 `const`를 사용하세요. 그렇지 않을 경우 전역 변수로 선언됩니다. 글로벌 네임 스페이스가 오염되지 않도록 캡틴 플래닛(역자주: 환경보호와 생태를 테마로 한 슈퍼히어로 애니메이션)도 경고하고 있습니다.
 
     ```javascript
     // bad
@@ -1046,9 +1046,9 @@ Other Style Guides
     const superPower = new SuperPower();
     ```
 
-  - [13.2](#13.2) <a name='13.2'></a> Use one `const` declaration per variable.
+  - [13.2](#13.2) <a name='13.2'></a> 하나의 변수 선언에 대해 하나의 `const`를 사용하세요.
 
-    > Why? It's easier to add new variable declarations this way, and you never have to worry about swapping out a `;` for a `,` or introducing punctuation-only diffs.
+    > 왜죠? 이 방법은 새로운 변수를 쉽게 추가할 수 있습니다. 또한 구분 기호의 차이에 의한 `;`를 `,`로 다시금 대체하는 작업에 대해 신경쓸 필요가 없습니다.
 
     eslint rules: [`one-var`](http://eslint.org/docs/rules/one-var.html).
 
@@ -1070,9 +1070,9 @@ Other Style Guides
     const dragonball = 'z';
     ```
 
-  - [13.3](#13.3) <a name='13.3'></a> Group all your `const`s and then group all your `let`s.
+  - [13.3](#13.3) <a name='13.3'></a> 먼저 `const`를 그룹화하고 그다음으로 `let`을 그룹화 하세오.
 
-    > Why? This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+    > 왜죠? 이전에 할당 된 변수에 따라 나중에 새로운 변수를 추가하는 경우에 유용하기 때문입니다.
 
     ```javascript
     // bad
@@ -1095,9 +1095,9 @@ Other Style Guides
     let length;
     ```
 
-  - [13.4](#13.4) <a name='13.4'></a> Assign variables where you need them, but place them in a reasonable place.
+  - [13.4](#13.4) <a name='13.4'></a> 변수를 할당할 때는 필요하고 합리적인 장소에 넣습니다.
 
-    > Why? `let` and `const` are block scoped and not function scoped.
+    > 왜죠? `let`과 `const`는 함수 Scope에는 없는 블록 Scope이기 때문입니다.
 
     ```javascript
     // good
@@ -1147,34 +1147,32 @@ Other Style Guides
 
 ## Hoisting
 
-  - [14.1](#14.1) <a name='14.1'></a> `var` declarations get hoisted to the top of their scope, their assignment does not. `const` and `let` declarations are blessed with a new concept called [Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let). It's important to know why [typeof is no longer safe](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15).
+  - [14.1](#14.1) <a name='14.1'></a> `var` 선언은 할당이 없는 상태로 범위(Scope)의 위로 Hoist될 수 있습니다. 하지만 `const`와 `let` 선언은 시간적 데드 존([Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let))이라는 새로운 개념의 혜택을 받고 있습니다. 이것은 왜 typeof가 안전하지 않은가([typeof is no longer safe](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15))를 알고있는 것이 중요합니다.
 
     ```javascript
-    // we know this wouldn't work (assuming there
-    // is no notDefined global variable)
+    // (notDefined가 글로벌 변수에 존재하지 않는다고 가정했을 경우)
+    // 이것은 잘 작동하지 않습니다. 
     function example() {
       console.log(notDefined); // => throws a ReferenceError
     }
 
-    // creating a variable declaration after you
-    // reference the variable will work due to
-    // variable hoisting. Note: the assignment
-    // value of `true` is not hoisted.
+    // 변수를 참조하는 코드 후에 그 변수를 선언한 경우
+    // 변수가 Hoist되어서 작동합니다.
+    // 주의: `true` 값 자체는 Hoist할 수 없습니다.
     function example() {
       console.log(declaredButNotAssigned); // => undefined
       var declaredButNotAssigned = true;
     }
 
-    // The interpreter is hoisting the variable
-    // declaration to the top of the scope,
-    // which means our example could be rewritten as:
+    // 인터프린터는 변수 선언을 Scope의 시작 부분에 Hoist합니다.
+    // 위의 예는 다음과 같이 다시 작성할 수 있습니다:
     function example() {
       let declaredButNotAssigned;
       console.log(declaredButNotAssigned); // => undefined
       declaredButNotAssigned = true;
     }
 
-    // using const and let
+    // const와 let을 사용하는 경우
     function example() {
       console.log(declaredButNotAssigned); // => throws a ReferenceError
       console.log(typeof declaredButNotAssigned); // => throws a ReferenceError
@@ -1182,7 +1180,7 @@ Other Style Guides
     }
     ```
 
-  - [14.2](#14.2) <a name='14.2'></a> Anonymous function expressions hoist their variable name, but not the function assignment.
+  - [14.2](#14.2) <a name='14.2'></a> 익명 함수 표현식에서는 함수가 할당되기 전에 변수가 Hoist될 수 있습니다.
 
     ```javascript
     function example() {
@@ -1196,7 +1194,7 @@ Other Style Guides
     }
     ```
 
-  - [14.3](#14.3) <a name='14.3'></a> Named function expressions hoist the variable name, not the function name or the function body.
+  - [14.3](#14.3) <a name='14.3'></a> 명명된 함수의 경우도 마찬가지로 변수가 Hoist될 수 있습니다. 함수이름과 함수본문는 Hoist되지 않습니다.
 
     ```javascript
     function example() {
@@ -1211,8 +1209,7 @@ Other Style Guides
       };
     }
 
-    // the same is true when the function name
-    // is the same as the variable name.
+    // 함수이름과 변수이름이 같은 경우에도 같은 일이 일어납니다.
     function example() {
       console.log(named); // => undefined
 
@@ -1224,7 +1221,7 @@ Other Style Guides
     }
     ```
 
-  - [14.4](#14.4) <a name='14.4'></a> Function declarations hoist their name and the function body.
+  - [14.4](#14.4) <a name='14.4'></a> 함수 선언은 함수이름과 함수본문이 Hoist됩니다.
 
     ```javascript
     function example() {
@@ -1236,34 +1233,34 @@ Other Style Guides
     }
     ```
 
-  - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting/) by [Ben Cherry](http://www.adequatelygood.com/).
+  - 더 자세한 정보는 [Ben Cherry](http://www.adequatelygood.com/)의 [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting/)을 참조하세요.
 
 **[⬆ back to top](#table-of-contents)**
 
 
 ## Comparison Operators & Equality
 
-  - [15.1](#15.1) <a name='15.1'></a> Use `===` and `!==` over `==` and `!=`.
+  - [15.1](#15.1) <a name='15.1'></a> `==`와 `!=` 보다는 `===`와 `!==`를 사용하세요.
 
-  - [15.2](#15.2) <a name='15.2'></a> Conditional statements such as the `if` statement evaluate their expression using coercion with the `ToBoolean` abstract method and always follow these simple rules:
+  - [15.2](#15.2) <a name='15.2'></a> `if`와 같은 조건문은 `ToBoolean`방법에 의한 강제 형 변환으로 구분되고 항상 다음과 같은 간단한 규칙을 따릅니다:
 
     eslint rules: [`eqeqeq`](http://eslint.org/docs/rules/eqeqeq.html).
 
-    + **Objects** evaluate to **true**
-    + **Undefined** evaluates to **false**
-    + **Null** evaluates to **false**
-    + **Booleans** evaluate to **the value of the boolean**
-    + **Numbers** evaluate to **false** if **+0, -0, or NaN**, otherwise **true**
-    + **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
+    + **Objects**는 **true**로 구분됩니다.
+    + **Undefined**는 **false**로 구분됩니다.
+    + **Null**은 **false**로 구분됩니다.
+    + **Booleans**은 **boolean형의 값**으로 구분됩니다.
+    + **Numbers**는 **true**로 구분됩니다. 그러나, **+0, -0, 또는 NaN**인 경우 **false**로 구분됩니다.
+    + **Strings**는 **true**로 구분됩니다. 그러나, 비어있는 `''`경우는 **false**로 구분됩니다.
 
     ```javascript
     if ([0]) {
       // true
-      // An array is an object, objects evaluate to true
+      // 배열은 객체이므로 true로 구분됩니다.
     }
     ```
 
-  - [15.3](#15.3) <a name='15.3'></a> Use shortcuts.
+  - [15.3](#15.3) <a name='15.3'></a> 손쉬운 방법을 사용하세요.
 
     ```javascript
     // bad
@@ -1287,14 +1284,14 @@ Other Style Guides
     }
     ```
 
-  - [15.4](#15.4) <a name='15.4'></a> For more information see [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll.
+  - [15.4](#15.4) <a name='15.4'></a> 더 자세한 내용은 여기를 참조하세요. [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll.
 
 **[⬆ back to top](#table-of-contents)**
 
 
 ## Blocks
 
-  - [16.1](#16.1) <a name='16.1'></a> Use braces with all multi-line blocks.
+  - [16.1](#16.1) <a name='16.1'></a> 여러 줄의 블록은 중괄호를 사용합니다.
 
     ```javascript
     // bad
@@ -1318,8 +1315,7 @@ Other Style Guides
     }
     ```
 
-  - [16.2](#16.2) <a name='16.2'></a> If you're using multi-line blocks with `if` and `else`, put `else` on the same line as your
-    `if` block's closing brace.
+  - [16.2](#16.2) <a name='16.2'></a> 여러 블록에 걸친 `if`와 `else`를 사용하는 경우, `else`는 `if`블록의 끝 중괄호와 같은 행에 두세요.
 
     eslint rules: [`brace-style`](http://eslint.org/docs/rules/brace-style.html).
 
@@ -1348,7 +1344,7 @@ Other Style Guides
 
 ## Comments
 
-  - [17.1](#17.1) <a name='17.1'></a> Use `/** ... */` for multi-line comments. Include a description, specify types and values for all parameters and return values.
+  - [17.1](#17.1) <a name='17.1'></a> 여러 줄의 주석에는 `/** ... */`를 사용하세요. 그 안에는 설명과 모든 매개변수와 반환 값에 대한 형식과 값을 표기합니다.
 
     ```javascript
     // bad
@@ -1380,7 +1376,7 @@ Other Style Guides
     }
     ```
 
-  - [17.2](#17.2) <a name='17.2'></a> Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment unless it's on the first line of a block.
+  - [17.2](#17.2) <a name='17.2'></a> 한 줄 주석에는 `//`를 사용하세요. 주석을 추가하싶은 코드의 상단에 배치하세요. 또한 주석 앞에 빈 줄을 넣어주세요.
 
     ```javascript
     // bad
@@ -1418,9 +1414,9 @@ Other Style Guides
     }
     ```
 
-  - [17.3](#17.3) <a name='17.3'></a> Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
+  - [17.3](#17.3) <a name='17.3'></a> 문제를 지적하고 재고를 촉구하거나 문제의 해결책을 제시하는 경우 등, 주석 앞에 `FIXME` 또는 `TODO` 를 붙이는 것으로 다른 개발자의 빠른 이해를 도울 수 있습니다. 이들은 어떠한 액션을 따른다는 의미에서 일반 댓글과 다를 수 있습니다. 액션은 `FIXME -- 해결책 필요` 또는 `TODO -- 구현 필요`.
 
-  - [17.4](#17.4) <a name='17.4'></a> Use `// FIXME:` to annotate problems.
+  - [17.4](#17.4) <a name='17.4'></a> 문제에 대한 주석으로 `// FIXME:`를 사용하세요.
 
     ```javascript
     class Calculator extends Abacus {
@@ -1433,7 +1429,7 @@ Other Style Guides
     }
     ```
 
-  - [17.5](#17.5) <a name='17.5'></a> Use `// TODO:` to annotate solutions to problems.
+  - [17.5](#17.5) <a name='17.5'></a> 해결책에 대한 주석으로 `// TODO:`를 사용하세요.
 
     ```javascript
     class Calculator extends Abacus {
@@ -1451,7 +1447,7 @@ Other Style Guides
 
 ## Whitespace
 
-  - [18.1](#18.1) <a name='18.1'></a> Use soft tabs set to 2 spaces.
+  - [18.1](#18.1) <a name='18.1'></a> 탭에 공백 2개를 설정하세요.
 
     eslint rules: [`indent`](http://eslint.org/docs/rules/indent.html).
 
@@ -1472,7 +1468,7 @@ Other Style Guides
     }
     ```
 
-  - [18.2](#18.2) <a name='18.2'></a> Place 1 space before the leading brace.
+  - [18.2](#18.2) <a name='18.2'></a> 중괄호 앞에 공백을 넣어주세요.
 
     eslint rules: [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks.html).
 
@@ -1500,7 +1496,7 @@ Other Style Guides
     });
     ```
 
-  - [18.3](#18.3) <a name='18.3'></a> Place 1 space before the opening parenthesis in control statements (`if`, `while` etc.). Place no space between the argument list and the function name in function calls and declarations.
+  - [18.3](#18.3) <a name='18.3'></a> 제어 구문(`if`, `while` 등)의 괄호 앞에 공백을 넣어주세요. 함수 선언과 함수 호출시 인수 목록 앞에는 공백을 넣지 않습니다.
 
     eslint rules: [`space-after-keywords`](http://eslint.org/docs/rules/space-after-keywords.html), [`space-before-keywords`](http://eslint.org/docs/rules/space-before-keywords.html).
 
@@ -1526,7 +1522,7 @@ Other Style Guides
     }
     ```
 
-  - [18.4](#18.4) <a name='18.4'></a> Set off operators with spaces.
+  - [18.4](#18.4) <a name='18.4'></a> 연산자 사이에는 공백이 있습니다.
 
     eslint rules: [`space-infix-ops`](http://eslint.org/docs/rules/space-infix-ops.html).
 
@@ -1538,7 +1534,7 @@ Other Style Guides
     const x = y + 5;
     ```
 
-  - [18.5](#18.5) <a name='18.5'></a> End files with a single newline character.
+  - [18.5](#18.5) <a name='18.5'></a> 파일의 마지막에 빈 줄을 하나 넣어주세요.
 
     ```javascript
     // bad
@@ -1562,8 +1558,7 @@ Other Style Guides
     })(this);↵
     ```
 
-  - [18.6](#18.6) <a name='18.6'></a> Use indentation when making long method chains. Use a leading dot, which
-    emphasizes that the line is a method call, not a new statement.
+  - [18.6](#18.6) <a name='18.6'></a> 메소드 체인이 길어지는 경우 적절히 들여쓰기(indentation) 하세요. 행이 메소드 호출이 아닌 새로운 문장임을 강조하기 위해 선두에 점을 배치하세요.
 
     ```javascript
     // bad
@@ -1602,7 +1597,7 @@ Other Style Guides
         .call(tron.led);
     ```
 
-  - [18.7](#18.7) <a name='18.7'></a> Leave a blank line after blocks and before the next statement.
+  - [18.7](#18.7) <a name='18.7'></a> 블록과 다음 Statement 사이에 빈 줄을 넣어주세요.
 
     ```javascript
     // bad
@@ -1659,7 +1654,7 @@ Other Style Guides
     return arr;
     ```
 
-  - [18.8](#18.8) <a name='18.8'></a> Do not pad your blocks with blank lines.
+  - [18.8](#18.8) <a name='18.8'></a> 블록에 빈 줄을 끼워넣지 않습니다.
 
     eslint rules: [`padded-blocks`](http://eslint.org/docs/rules/padded-blocks.html).
 
@@ -1693,7 +1688,7 @@ Other Style Guides
     }
     ```
 
-  - [18.9](#18.9) <a name='18.9'></a> Do not add spaces inside parentheses.
+  - [18.9](#18.9) <a name='18.9'></a> 괄호 안에 공백을 추가하지 않습니다.
 
     eslint rules: [`space-in-parens`](http://eslint.org/docs/rules/space-in-parens.html).
 
@@ -1719,7 +1714,7 @@ Other Style Guides
     }
     ```
 
-  - [18.10](#18.10) <a name='18.10'></a> Do not add spaces inside brackets.
+  - [18.10](#18.10) <a name='18.10'></a> 대괄호 안에 공백을 추가하지 않습니다.
 
     eslint rules: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html).
 
@@ -1733,7 +1728,7 @@ Other Style Guides
     console.log(foo[0]);
     ```
 
-  - [18.11](#18.11) <a name='18.11'></a> Add spaces inside curly braces.
+  - [18.11](#18.11) <a name='18.11'></a> 중괄호 안에 공백을 추가하지 않습니다.
 
     eslint rules: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html).
 
@@ -1745,9 +1740,9 @@ Other Style Guides
     const foo = { clark: 'kent' };
     ```
 
-  - [18.12](#18.12) <a name='18.12'></a> Avoid having lines of code that are longer than 100 characters (including whitespace).
+  - [18.12](#18.12) <a name='18.12'></a> 한 줄에 100문자(공백 포함)가 넘는 코드는 피하세요.
 
-    > Why? This ensures readability and maintainability.
+    > 왜죠? 가독성과 유지 보수성을 보장합니다.
 
     eslint rules: [`max-len`](http://eslint.org/docs/rules/max-len.html).
 
@@ -1776,7 +1771,7 @@ Other Style Guides
 
 ## Commas
 
-  - [19.1](#19.1) <a name='19.1'></a> Leading commas: **Nope.**
+  - [19.1](#19.1) <a name='19.1'></a> 쉼표로 시작: **제발 그만하세요.**
 
     eslint rules: [`comma-style`](http://eslint.org/docs/rules/comma-style.html).
 
@@ -1812,11 +1807,11 @@ Other Style Guides
     };
     ```
 
-  - [19.2](#19.2) <a name='19.2'></a> Additional trailing comma: **Yup.**
+  - [19.2](#19.2) <a name='19.2'></a> 마지막에 쉼표: **좋습니다.**
 
     eslint rules: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle.html).
 
-    > Why? This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don't have to worry about the [trailing comma problem](es5/README.md#commas) in legacy browsers.
+    > 왜죠? 이것은 깨끗한 git의 차이로 이어집니다. 또한 Babel관 같은 트랜스 컴파일러는 끝에 불필요한 쉼표를 알아서 제거합니다. 이것은 기존 브라우저에서 [불필요한 쉼표 문제](es5/README.md#commas)를 걱정할 필요가 없다는 것을 의미합니다.
 
     ```javascript
     // bad - git diff without trailing comma
@@ -1862,7 +1857,7 @@ Other Style Guides
 
 ## Semicolons
 
-  - [20.1](#20.1) <a name='20.1'></a> **Yup.**
+  - [20.1](#20.1) <a name='20.1'></a> **물론 사용합시다.**
 
     eslint rules: [`semi`](http://eslint.org/docs/rules/semi.html).
 
@@ -1893,8 +1888,8 @@ Other Style Guides
 
 ## Type Casting & Coercion
 
-  - [21.1](#21.1) <a name='21.1'></a> Perform type coercion at the beginning of the statement.
-  - [21.2](#21.2) <a name='21.2'></a> Strings:
+  - [21.1](#21.1) <a name='21.1'></a> 문장의 시작 부분에서 형을 강제합니다.
+  - [21.2](#21.2) <a name='21.2'></a> String:
 
     ```javascript
     //  => this.reviewScore = 9;
@@ -1906,7 +1901,7 @@ Other Style Guides
     const totalScore = String(this.reviewScore);
     ```
 
-  - [21.3](#21.3) <a name='21.3'></a> Numbers: Use `Number` for type casting and `parseInt` always with a radix for parsing strings.
+  - [21.3](#21.3) <a name='21.3'></a> Number: `Number`로 형 변환하려면 `parseInt`를 사용하세요. 항상 형변환을 위한 기수(radix)를 인수로 전달합니다.
 
     eslint rules: [`radix`](http://eslint.org/docs/rules/radix).
 
@@ -1932,19 +1927,19 @@ Other Style Guides
     const val = parseInt(inputValue, 10);
     ```
 
-  - [21.4](#21.4) <a name='21.4'></a> If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](http://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
+  - [21.4](#21.4) <a name='21.4'></a> 어떤 이유로 `parseInt`가 병목이되고, [성능적인 이유](http://jsperf.com/coercion-vs-casting/3)에서 Bitshift를 사용해야 하는 경우, 무엇을(what) 왜(why)에 대한 설명을 댓글로 남겨 주세요.
 
     ```javascript
     // good
     /**
-     * parseInt was the reason my code was slow.
-     * Bitshifting the String to coerce it to a
-     * Number made it a lot faster.
+     * parseInt가 병목이되고 있었기 때문에, 
+     * Bitshift 문자열을 수치로 강제로 변환하여 
+     * 성능을 향상시킵니다.
      */
     const val = inputValue >> 0;
     ```
 
-  - [21.5](#21.5) <a name='21.5'></a> **Note:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](http://es5.github.io/#x4.3.19), but Bitshift operations always return a 32-bit integer ([source](http://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Discussion](https://github.com/airbnb/javascript/issues/109). Largest signed 32-bit Int is 2,147,483,647:
+  - [21.5](#21.5) <a name='21.5'></a> **주의:** Bitshift를 사용하는 경우 수치는 [64-비트 값들](http://es5.github.io/#x4.3.19)로 표현되어 있지만, Bitshift를 연산하면 항상 32-비트 단 정밀도로 돌려 주어집니다([source](http://es5.github.io/#x11.7)). 32-비트 이상의 값을 비트 이동하면 예상치 못한 행동을 일으킬 가능성이 있습니다. [Discussion](https://github.com/airbnb/javascript/issues/109). 부호있는 32-비트 정수의 최대 값은 2,147,483,647입니다:
 
     ```javascript
     2147483647 >> 0 //=> 2147483647
@@ -1972,7 +1967,7 @@ Other Style Guides
 
 ## Naming Conventions
 
-  - [22.1](#22.1) <a name='22.1'></a> Avoid single letter names. Be descriptive with your naming.
+  - [22.1](#22.1) <a name='22.1'></a> 하나의 문자로 구성된 이름은 피하세요. 이름에서 의도를 읽을 수 있도록 해야 합니다.
 
     ```javascript
     // bad
@@ -1986,7 +1981,7 @@ Other Style Guides
     }
     ```
 
-  - [22.2](#22.2) <a name='22.2'></a> Use camelCase when naming objects, functions, and instances.
+  - [22.2](#22.2) <a name='22.2'></a> 객체, 함수 인스턴스에는 camelCase(소문자로 시작)를 사용하세요.
 
     eslint rules: [`camelcase`](http://eslint.org/docs/rules/camelcase.html).
 
@@ -2001,7 +1996,7 @@ Other Style Guides
     function thisIsMyFunction() {}
     ```
 
-  - [22.3](#22.3) <a name='22.3'></a> Use PascalCase when naming constructors or classes.
+  - [22.3](#22.3) <a name='22.3'></a> 클래스와 생성자는 PascalCase(대문자로 시작)를 사용하세요.
 
     ```javascript
     // bad
@@ -2025,7 +2020,7 @@ Other Style Guides
     });
     ```
 
-  - [22.4](#22.4) <a name='22.4'></a> Use a leading underscore `_` when naming private properties.
+  - [22.4](#22.4) <a name='22.4'></a> Private 속성 이름은 앞에 밑줄`_`을 사용하세요.
 
     eslint rules: [`no-underscore-dangle`](http://eslint.org/docs/rules/no-underscore-dangle.html).
 
@@ -2038,7 +2033,7 @@ Other Style Guides
     this._firstName = 'Panda';
     ```
 
-  - [22.5](#22.5) <a name='22.5'></a> Don't save references to `this`. Use arrow functions or Function#bind.
+  - [22.5](#22.5) <a name='22.5'></a> `this`에 대한 참조를 저장하지 않습니다. Arrow 함수 또는 Function#bind를 사용하세요.
 
     ```javascript
     // bad
@@ -2065,7 +2060,7 @@ Other Style Guides
     }
     ```
 
-  - [22.6](#22.6) <a name='22.6'></a> If your file exports a single class, your filename should be exactly the name of the class.
+  - [22.6](#22.6) <a name='22.6'></a> 파일을 하나의 클래스로 export 할 경우 파일 이름은 클래스 이름과 정확하게 일치해야 합니다.
 
     ```javascript
     // file contents
@@ -2085,7 +2080,7 @@ Other Style Guides
     import CheckBox from './CheckBox';
     ```
 
-  - [22.7](#22.7) <a name='22.7'></a> Use camelCase when you export-default a function. Your filename should be identical to your function's name.
+  - [22.7](#22.7) <a name='22.7'></a> export-default 함수의 경우, camelCase(소문자로 시작)를 사용하세요. 파일이름은 함수이름과 동일해야 합니다.
 
     ```javascript
     function makeStyleGuide() {
@@ -2094,7 +2089,7 @@ Other Style Guides
     export default makeStyleGuide;
     ```
 
-  - [22.8](#22.8) <a name='22.8'></a> Use PascalCase when you export a singleton / function library / bare object.
+  - [22.8](#22.8) <a name='22.8'></a> 싱글톤(singleton) / function library / 단순한 객체(bare object)를 export하는 경우, PascalCase(대문자로 시작)를 사용하세요.
 
     ```javascript
     const AirbnbStyleGuide = {
@@ -2111,8 +2106,8 @@ Other Style Guides
 
 ## Accessors
 
-  - [23.1](#23.1) <a name='23.1'></a> Accessor functions for properties are not required.
-  - [23.2](#23.2) <a name='23.2'></a> If you do make accessor functions use getVal() and setVal('hello').
+  - [23.1](#23.1) <a name='23.1'></a> 속성에 대한 접근자(Accessor) 함수는 필요하지 않습니다.
+  - [23.2](#23.2) <a name='23.2'></a> 접근자 함수가 필요한 경우 `getVal()`과 `setVal('hello')`로 하세요.
 
     ```javascript
     // bad
@@ -2128,7 +2123,7 @@ Other Style Guides
     dragon.setAge(25);
     ```
 
-  - [23.3](#23.3) <a name='23.3'></a> If the property is a `boolean`, use `isVal()` or `hasVal()`.
+  - [23.3](#23.3) <a name='23.3'></a> 속성이 `boolean`의 경우 `isVal()` 또는 `hasVal()`로 하세요.
 
     ```javascript
     // bad
@@ -2142,7 +2137,7 @@ Other Style Guides
     }
     ```
 
-  - [23.4](#23.4) <a name='23.4'></a> It's okay to create get() and set() functions, but be consistent.
+  - [23.4](#23.4) <a name='23.4'></a> 일관된 것이라면, `get()`과 `set()` 함수를 만들수 있습니다.
 
     ```javascript
     class Jedi {
@@ -2166,7 +2161,7 @@ Other Style Guides
 
 ## Events
 
-  - [24.1](#24.1) <a name='24.1'></a> When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
+  - [24.1](#24.1) <a name='24.1'></a> (DOM 이벤트, Backbone 이벤트)처럼 자신의 이벤트 페이로드 값을 전달하려면 원시값 대신 해시인수를 전달합니다. 이렇게 하면 나중에 개발자가 이벤트에 관련된 모든 핸들러를 찾아 업데이트하지 않고 이벤트 페이로드에 값을 추가할 수 있습니다. 예를 들면:
 
     ```javascript
     // bad
@@ -2179,7 +2174,7 @@ Other Style Guides
     });
     ```
 
-    prefer:
+    이쪽이 더 선호됨:
 
     ```javascript
     // good
@@ -2197,7 +2192,7 @@ Other Style Guides
 
 ## jQuery
 
-  - [25.1](#25.1) <a name='25.1'></a> Prefix jQuery object variables with a `$`.
+  - [25.1](#25.1) <a name='25.1'></a> jQuery 개체 변수 앞에 `$`를 부여합니다.
 
     ```javascript
     // bad
@@ -2210,7 +2205,7 @@ Other Style Guides
     const $sidebarBtn = $('.sidebar-btn');
     ```
 
-  - [25.2](#25.2) <a name='25.2'></a> Cache jQuery lookups.
+  - [25.2](#25.2) <a name='25.2'></a> jQuery의 검색 결과를 캐시합니다.
 
     ```javascript
     // bad
@@ -2237,8 +2232,8 @@ Other Style Guides
     }
     ```
 
-  - [25.3](#25.3) <a name='25.3'></a> For DOM queries use Cascading `$('.sidebar ul')` or parent > child `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
-  - [25.4](#25.4) <a name='25.4'></a> Use `find` with scoped jQuery object queries.
+  - [25.3](#25.3) <a name='25.3'></a> DOM의 검색에는 `$('.sidebar ul')` 또는 `$('.sidebar > ul')`과 같은 Cascading을 사용하세요. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
+  - [25.4](#25.4) <a name='25.4'></a> jQuery 객체의 검색에는 범위가있는 `find` 를 사용하세요.
 
     ```javascript
     // bad
@@ -2262,13 +2257,13 @@ Other Style Guides
 
 ## ECMAScript 5 Compatibility
 
-  - [26.1](#26.1) <a name='26.1'></a> Refer to [Kangax](https://twitter.com/kangax/)'s ES5 [compatibility table](http://kangax.github.io/es5-compat-table/).
+  - [26.1](#26.1) <a name='26.1'></a> [Kangax](https://twitter.com/kangax/)의 ES5 [호환성 표](http://kangax.github.io/es5-compat-table/)를 참조하세요.
 
 **[⬆ back to top](#table-of-contents)**
 
 ## ECMAScript 6 Styles
 
-  - [27.1](#27.1) <a name='27.1'></a> This is a collection of links to the various es6 features.
+  - [27.1](#27.1) <a name='27.1'></a> 이것은 ES6 명세 링크를 모아 놓은 것입니다.
 
 1. [Arrow Functions](#arrow-functions)
 1. [Classes](#constructors)
@@ -2288,7 +2283,7 @@ Other Style Guides
 
 ## Testing
 
-  - [28.1](#28.1) <a name="28.1"></a> **Yup.**
+  - [28.1](#28.1) <a name="28.1"></a> **물론 해야 합니다.**
 
     ```javascript
     function () {
@@ -2296,13 +2291,13 @@ Other Style Guides
     }
     ```
 
-  - [28.2](#28.2) <a name="28.2"></a> **No, but seriously**:
-   - Whichever testing framework you use, you should be writing tests!
-   - Strive to write many small pure functions, and minimize where mutations occur.
-   - Be cautious about stubs and mocks - they can make your tests more brittle.
-   - We primarily use [`mocha`](https://www.npmjs.com/package/mocha) at Airbnb. [`tape`](https://www.npmjs.com/package/tape) is also used occasionally for small, separate modules.
-   - 100% test coverage is a good goal to strive for, even if it's not always practical to reach it.
-   - Whenever you fix a bug, _write a regression test_. A bug fixed without a regression test is almost certainly going to break again in the future.
+  - [28.2](#28.2) <a name="28.2"></a> **물론 심각하게**:
+   - 대부분 테스트 프레임워크를 이용하여 테스트를 작성합니다.
+   - 작은 기능의 함수를 자주 쓰고 이변이 발생할 수 있는 부분을 최소화하기 위해 노력합니다.
+   - stubs와 mocks에 주의하세요. 이 것들로 인해 테스트가 부서지기 쉽습니다.
+   - Airbnb는 [`mocha`](https://www.npmjs.com/package/mocha)를 이용하고 있습니다. 작게 분할된 개별 모듈은 [`tape`](https://www.npmjs.com/package/tape) 사용합니다.
+   - 현실에서 도달할 필요가 없어도 100%의 테스트 커버리지를 목표로하는 것이 좋습니다.
+   - 버그를 수정할 때 마다 _회귀 테스트를 씁니다_. 회귀 테스트 없는 버그 수정은 나중에 반드시 다시 깨어날 것입니다.
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -2404,7 +2399,7 @@ Other Style Guides
 
 ## In the Wild
 
-  This is a list of organizations that are using this style guide. Send us a pull request and we'll add you to the list.
+  이 것은 본 스타일 가이드를 사용하는 조직의 목록입니다. 이 목록에 추가하고 싶다면, pull request를 하거나 issue를 통해 알려주세요.
 
   - **Aan Zee**: [AanZee/javascript](https://github.com/AanZee/javascript)
   - **Adult Swim**: [adult-swim/javascript](https://github.com/adult-swim/javascript)
@@ -2471,7 +2466,7 @@ Other Style Guides
 
 ## Translation
 
-  This style guide is also available in other languages:
+  이 스타일 가이드는 다른 언어로도 이용할 수 있습니다.
 
   - ![br](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png) **Brazilian Portuguese**: [armoucar/javascript-style-guide](https://github.com/armoucar/javascript-style-guide)
   - ![bg](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Bulgaria.png) **Bulgarian**: [borislavvv/javascript](https://github.com/borislavvv/javascript)
