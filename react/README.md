@@ -1,6 +1,6 @@
 # Airbnb React/JSX 스타일 가이드
 
-*A mostly reasonable approach to React and JSX*
+*React와 JSX에 대한 가장 합리적인 접근 방식*
 
 ## Table of Contents
 
