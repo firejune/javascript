@@ -4,7 +4,7 @@
 
 ## 목차
 
-  1. [기본 규칙(Basic Rules)]차기본-규칙basic-rules)
+  1. [기본 규칙(Basic Rules)](#기본-규칙basic-rules)
   1. [클래스 대 `React.createClass`(Class vs `React.createClass`)](#클래스-대-reactcreateclassclass-vs-reactcreateclass)
   1. [명명(Naming)](#명명naming)
   1. [선언(Declaration)](#선언declaration)
