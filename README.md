@@ -574,9 +574,9 @@
     ```javascript
     // really bad
     function handleThings(opts) {
-      // No! We shouldn't mutate function arguments.
-      // Double bad: if opts is falsy it'll be set to an object which may
-      // be what you want but it can introduce subtle bugs.
+      // 안되! 함수의 매개변수를 조작하지 않습니다. 
+      // 만약 opts가 falsy 인 경우는 바란대로 객체가 설정됩니다. 
+      // 그러나 미묘한 버그를 일으키는 원인이 될수도 있습니다. 
       opts = opts || {};
       // ...
     }
