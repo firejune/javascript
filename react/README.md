@@ -329,7 +329,7 @@
   - `class extends React.Component`의 오더링(Ordering):
 
   1. `constructor`
-  1. optional `static` methods
+  1. 추가적인(optional) `static` 메소드
   1. `getChildContext`
   1. `componentWillMount`
   1. `componentDidMount`
@@ -338,9 +338,9 @@
   1. `componentWillUpdate`
   1. `componentDidUpdate`
   1. `componentWillUnmount`
-  1. *clickHandlers or eventHandlers* like `onClickSubmit()` or `onChangeDescription()`
-  1. *getter methods for `render`* like `getSelectReason()` or `getFooterContent()`
-  1. *Optional render methods* like `renderNavigation()` or `renderProfilePicture()`
+  1. `onClickSubmit()`와 같은 *clickHandlers 또는 eventHandlers* 또는 `onChangeDescription()`
+  1. `getSelectReason()`와 같은 *`render`를 위한 getter methods* 또는 `getFooterContent()`
+  1. `renderNavigation()`와 같은 *추가적인 렌더러 메소드* 또는 `renderProfilePicture()`
   1. `render`
 
   - `propTypes`, `defaultProps`, `contextTypes`, 등을 어떻게 정의할까요...
@@ -393,9 +393,9 @@
   1. `componentWillUpdate`
   1. `componentDidUpdate`
   1. `componentWillUnmount`
-  1. *clickHandlers or eventHandlers* like `onClickSubmit()` or `onChangeDescription()`
-  1. *getter methods for `render`* like `getSelectReason()` or `getFooterContent()`
-  1. *Optional render methods* like `renderNavigation()` or `renderProfilePicture()`
+  1. `onClickSubmit()`와 같은 *clickHandlers 또는 eventHandlers* 또는 `onChangeDescription()`
+  1. `getSelectReason()`와 같은 *`render`를 위한 getter methods* 또는 `getFooterContent()`
+  1. `renderNavigation()`와 같은 *추가적인 렌더러 메소드* 또는 `renderProfilePicture()`
   1. `render`
 
   eslint rules: [`react/sort-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md).
