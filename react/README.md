@@ -1,4 +1,4 @@
-# Airbnb React/JSX Style Guide
+# Airbnb React/JSX 스타일 가이드
 
 *A mostly reasonable approach to React and JSX*
 
@@ -20,14 +20,14 @@
 
 ## Basic Rules
 
-  - Only include one React component per file.
-    - However, multiple [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) are allowed per file. eslint rule: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
-  - Always use JSX syntax.
-  - Do not use `React.createElement` unless you're initializing the app from a file that is not JSX.
+  - 하나의 파일에는 오직 하나의 React 컴포넌트를 사용합니다.
+    - 그러나, 다중 [스테이트가 없는(Stateless) 또는 순수한 함수나 컴포넌트](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions)는 허용됩니다. eslint rule: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
+  - 항상 JSX 문법을 사용합니다.
+  - JSX파일이 아닌 다른 app에서 초기화하는 경우를 제외하고는 `React.createElement`를 사용하지 않습니다.
 
 ## Class vs `React.createClass`
 
-  - Use `class extends React.Component` unless you have a very good reason to use mixins.
+  - 특별한 이유로 믹스인(mixin)하는 경우를 제외하고는 `class extends React.Component`를 사용하세요.
 
   eslint rules: [`react/prefer-es6-class`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md).
 
@@ -49,9 +49,9 @@
 
 ## Naming
 
-  - **Extensions**: Use `.jsx` extension for React components.
-  - **Filename**: Use PascalCase for filenames. E.g., `ReservationCard.jsx`.
-  - **Reference Naming**: Use PascalCase for React components and camelCase for their instances.
+  - **확장자**: React 컴포넌트는 `.jsx` 확장자를 사용합니다.
+  - **파일명**: 파일명에는 PascalCase(대문자로 시작)를 사용합니다. 예), `ReservationCard.jsx`.
+  - **참조명**: React 컴포넌트의 참조 이름에는 PascalCase를 쓰고 그 인스턴스의 이름에는 camelCase(소문자로 시작)를 사용합니다.
 
   eslint rules: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md).
 
@@ -69,7 +69,7 @@
     const reservationItem = <ReservationCard />;
     ```
 
-  - **Component Naming**: Use the filename as the component name. For example, `ReservationCard.jsx` should have a reference name of `ReservationCard`. However, for root components of a directory, use `index.jsx` as the filename and use the directory name as the component name:
+  - **컴포넌트명**: 컴포넌트명으로 파일명을 씁니다. 예), `ReservationCard.jsx` 파일은 `ReservationCard`라는 참조명을 가집니다. 그러나, 루트 컴포넌트가 디렉토리에 구성되었다면 파일명을 `index.jsx`로 쓰고 디렉토리명을 컴포넌트명으로 사용합니다:
 
     ```javascript
     // bad
@@ -84,7 +84,7 @@
 
 ## Declaration
 
-  - Do not use `displayName` for naming components. Instead, name the component by reference.
+  - `displayName`을 이용하여 컴포넌트명을 정하지 않습니다. 그대신, 참조에 의해 이름을 지정합니다.
 
     ```javascript
     // bad
@@ -100,7 +100,7 @@
 
 ## Alignment
 
-  - Follow these alignment styles for JSX syntax
+  - JSX 구문에 따른 정렬 스타일을 사용합니다.
 
   eslint rules: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md).
 
@@ -129,10 +129,10 @@
 
 ## Quotes
 
-  - Always use double quotes (`"`) for JSX attributes, but single quotes for all other JS.
+  - JSX 속성(attributes)에는 항상 큰 따옴표(`"`)를 사용합니다. 그러나 다른 모든 자바스크립트에는 작은 따옴표(single quotes)를 사용합니다.
 
-  > Why? JSX attributes [can't contain escaped quotes](http://eslint.org/docs/rules/jsx-quotes), so double quotes make conjunctions like `"don't"` easier to type.
-  > Regular HTML attributes also typically use double quotes instead of single, so JSX attributes mirror this convention.
+  > 왜죠? JSX 속성(attributes)은 [따옴표(quotes)의 탈출(escaped)을 포함할 수 없습니다](http://eslint.org/docs/rules/jsx-quotes). 그래서 큰 따옴표를 이용하여 `"don't"`과 같은 접속사를 쉽게 입력할 수 있습니다.
+  > 일반적으로 HTML 속성(attributes)에는 작은 따옴표 대신 큰 따옴표를 사용합니다. 그래서 JSX 속성역시 동일한 규칙이 적용됩니다.
 
   eslint rules: [`jsx-quotes`](http://eslint.org/docs/rules/jsx-quotes).
 
@@ -152,7 +152,7 @@
 
 ## Spacing
 
-  - Always include a single space in your self-closing tag.
+  - 자신을 닫는(self-closing) 태그에는 항상 하나의 공백만을 사용합니다.
 
     ```javascript
     // bad
@@ -171,7 +171,7 @@
 
 ## Props
 
-  - Always use camelCase for prop names.
+  - prop 이름은 항상 camelCase(소문자로 시작)를 사용합니다.
 
     ```javascript
     // bad
@@ -187,7 +187,7 @@
     />
     ```
 
-  - Omit the value of the prop when it is explicitly `true`.
+  - 명시적으로 `true` 값을 가지는 prop은 그 값을 생략할 수 있습니다.
 
   eslint rules: [`react/jsx-boolean-value`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md).
 
@@ -205,7 +205,7 @@
 
 ## Parentheses
 
-  - Wrap JSX tags in parentheses when they span more than one line.
+  - JSX 태그가 감싸여(Wrap) 있어 한 줄 이상인 경우 괄호(parentheses)를 사용합니다.
 
   eslint rules: [`react/wrap-multilines`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/wrap-multilines.md).
 
@@ -235,7 +235,7 @@
 
 ## Tags
 
-  - Always self-close tags that have no children.
+  - 자식(children)을 가지지 않는다면 항상 자신을 닫는(self-close) 태그로 작성합니다.
 
   eslint rules: [`react/self-closing-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md).
 
@@ -247,7 +247,7 @@
     <Foo className="stuff" />
     ```
 
-  - If your component has multi-line properties, close its tag on a new line.
+  - 만약, 컴포넌트의 속성(properties)을 여러 줄에 있는 경우, 닫는 태그는 다음 줄에 작성합니다.
 
   eslint rules: [`react/jsx-closing-bracket-location`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md).
 
@@ -266,9 +266,9 @@
 
 ## Methods
 
-  - Bind event handlers for the render method in the constructor.
+  - 렌더러 메소드에서 이벤트 핸들러에 바인드(Bind)가 필요한 경우에는 생성자(constructor)에서 합니다.
 
-  > Why? A bind call in a the render path creates a brand new function on every single render.
+  > 왜죠? 렌더러 메소드에서 바인드(bind)를 호출하게 되면 랜더링 할 때 마다 매번 새로운 함수를 생성하게 됩니다.
 
   eslint rules: [`react/jsx-no-bind`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md).
 
@@ -302,7 +302,7 @@
     }
     ```
 
-  - Do not use underscore prefix for internal methods of a React component.
+  - React 컴포넌트의 내부 메소드에 밑줄(underscore)을 접두사로 사용하지 않습니다.
 
     ```javascript
     // bad
@@ -326,7 +326,7 @@
 
 ## Ordering
 
-  - Ordering for `class extends React.Component`:
+  - `class extends React.Component`의 오더링(Ordering):
 
   1. `constructor`
   1. optional `static` methods
@@ -343,7 +343,7 @@
   1. *Optional render methods* like `renderNavigation()` or `renderProfilePicture()`
   1. `render`
 
-  - How to define `propTypes`, `defaultProps`, `contextTypes`, etc...
+  - `propTypes`, `defaultProps`, `contextTypes`, 등을 어떻게 정의할까요...
 
     ```javascript
     import React, { PropTypes } from 'react';
@@ -374,7 +374,7 @@
     export default Link;
     ```
 
-  - Ordering for `React.createClass`:
+  - `React.createClass`의 오더링(Ordering):
 
   1. `displayName`
   1. `propTypes`
@@ -402,9 +402,9 @@
 
 ## `isMounted`
 
-  - Do not use `isMounted`.
+  - `isMounted`는 사용하지 않습니다.
 
-  > Why? [`isMounted` is an anti-pattern][anti-pattern], is not available when using ES6 classes, and is on its way to being officially deprecated.
+  > 왜죠? [`isMounted`는 안티-패턴(anti-pattern)][anti-pattern]입니다. ES6 클래스에서는 사용할수도 없습니다. 그리고 공식적으로 사용되지 않게(deprecated) 될 것입니다.
 
   [anti-pattern]: https://facebook.github.io/react/blog/2015/12/16/ismounted-antipattern.html
 
