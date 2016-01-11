@@ -11,46 +11,46 @@
  - [CSS & Sass](https://github.com/airbnb/css)
  - [Ruby](https://github.com/airbnb/ruby)
 
-## Table of Contents
+## 목차
 
-  1. [Types](#types)
-  1. [References](#references)
-  1. [Objects](#objects)
-  1. [Arrays](#arrays)
-  1. [Destructuring](#destructuring)
-  1. [Strings](#strings)
-  1. [Functions](#functions)
-  1. [Arrow Functions](#arrow-functions)
-  1. [Constructors](#constructors)
-  1. [Modules](#modules)
-  1. [Iterators and Generators](#iterators-and-generators)
-  1. [Properties](#properties)
-  1. [Variables](#variables)
-  1. [Hoisting](#hoisting)
-  1. [Comparison Operators & Equality](#comparison-operators--equality)
-  1. [Blocks](#blocks)
-  1. [Comments](#comments)
-  1. [Whitespace](#whitespace)
-  1. [Commas](#commas)
-  1. [Semicolons](#semicolons)
-  1. [Type Casting & Coercion](#type-casting--coercion)
-  1. [Naming Conventions](#naming-conventions)
-  1. [Accessors](#accessors)
-  1. [Events](#events)
+  1. [유형(Types)](#유형types)
+  1. [참조(References)](#참조references)
+  1. [객체(Objects)](#객체objects)
+  1. [배열(Arrays)](#배열arrays)
+  1. [구조화 대입(Destructuring)](#구조화-대입destructuring)
+  1. [문자열(Strings)](#문자열strings)
+  1. [함수(Functions)](#함수functions)
+  1. [애로우 함수(Arrow Functions)](#애로우-함수arrow-functions)
+  1. [생성자(Constructors)](#생성자constructors)
+  1. [모듈(Modules)](#모듈modules)
+  1. [이터레이터와 제너레이터(Iterators and Generators)](#이터레이터와-제너레이터iterators-and-generators)
+  1. [속성(Properties)](#속성properties)
+  1. [변수(Variables)](#변수variables)
+  1. [호이스팅(Hoisting)](#호이스팅hoisting)
+  1. [조건식과 등가현(Comparison Operators & Equality)](#조건식과-등가식comparison-operators--equality)
+  1. [블록(Blocks)](#블록blocks)
+  1. [주석(Comments)](#주석comments)
+  1. [공백(Whitespace)](#공백whitespace)
+  1. [쉼표(Commas)](#쉼표commas)
+  1. [세미콜론(Semicolons)](#세미콜론semicolons)
+  1. [형변환과 강제(Type Casting & Coercion)](#형변환과-강제type-casting--coercion)
+  1. [명명 규칙(Naming Conventions)](#명명-규칙naming-conventions)
+  1. [액세서(Accessors)](#액세서accessors)
+  1. [이벤트(Events)](#이벤트events)
   1. [jQuery](#jquery)
-  1. [ECMAScript 5 Compatibility](#ecmascript-5-compatibility)
-  1. [ECMAScript 6 Styles](#ecmascript-6-styles)
-  1. [Testing](#testing)
-  1. [Performance](#performance)
-  1. [Resources](#resources)
-  1. [In the Wild](#in-the-wild)
-  1. [Translation](#translation)
-  1. [The JavaScript Style Guide Guide](#the-javascript-style-guide-guide)
-  1. [Chat With Us About JavaScript](#chat-with-us-about-javascript)
-  1. [Contributors](#contributors)
-  1. [License](#license)
+  1. [ECMAScript 5 호환성(ECMAScript 5 Compatibility)](#ecmascript-5-호환성ecmascript-5-compatibility)
+  1. [ECMAScript 6 스타일(ECMAScript 6 Styles)](#ecmascript-6-스타일ecmascript-6-styles)
+  1. [테스팅(Testing)](#테스팅testing)
+  1. [성능(Performance)](#성능performance)
+  1. [참고(Resources)](#참고resources)
+  1. [기여(In the Wild)](#기여in-the-wild)
+  1. [번역(Translation)](#번역translation)
+  1. [자바스크립트 스타일 가이드 안내서(The JavaScript Style Guide Guide)](#자바스크립트-스타일-가이드-안내서the-javascript-style-guide-guide)
+  1. [자바스크립트 스타일 가이드 채팅(Chat With Us About JavaScript)](#자바스크립트-스타일-가이드-채팅chat-with-us-about-javascript)
+  1. [참여자(Contributors)](#참여자contributors)
+  1. [라이센스(License)](#라이센스license)
 
-## Types
+## 유형(Types)
 
   - [1.1](#1.1) <a name='1.1'></a> **Primitives**: 원시형(Primitive type)은 그 값을 직접 조작합니다.
 
@@ -83,13 +83,13 @@
     console.log(foo[0], bar[0]); // => 9, 9
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
-## References
+## 참조(References)
 
   - [2.1](#2.1) <a name='2.1'></a> 모든 참조에는 `const`를 사용하고 `var`를 사용하지 않습니다.
 
-    > 왜죠? 참조를 다시 할당할 수 없으므로, 버그로 연결되거나 이해하기 어려운 코드가 되는 것을 방지합니다.
+    > 왜죠? 참조를 다시 할당할 수 없어서, 버그로 연결되거나 이해하기 어려운 코드가 되는 것을 예방합니다.
 
     eslint rules: [`prefer-const`](http://eslint.org/docs/rules/prefer-const.html), [`no-const-assign`](http://eslint.org/docs/rules/no-const-assign.html).
 
@@ -135,11 +135,11 @@
     console.log(b); // ReferenceError
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
-## Objects
+## 객체(Objects)
 
-  - [3.1](#3.1) <a name='3.1'></a> 개체를 만들 때에는 리터럴 구문을 사용합니다.
+  - [3.1](#3.1) <a name='3.1'></a> 객체를 만들 때에는 리터럴 구문을 사용합니다.
 
     eslint rules: [`no-new-object`](http://eslint.org/docs/rules/no-new-object.html).
 
@@ -151,7 +151,7 @@
     const item = {};
     ```
 
-  - [3.2](#3.2) <a name='3.2'></a> 코드가 브라우저에서 실행되는 경우 [예약어](http://es5.github.io/#x7.6.1)를 키로 사용하지 마세요. 이것은 IE8에서 작동하지 않습니다. [More info](https://github.com/airbnb/javascript/issues/61). ES6 모듈과 서버 사이드에서는 사용할 수 있습니다.
+  - [3.2](#3.2) <a name='3.2'></a> 코드가 브라우저에서 실행되는 경우 [예약어](http://es5.github.io/#x7.6.1)를 키로 사용하지 마세요. 이것은 IE8에서 작동하지 않습니다. [더 알아보기](https://github.com/airbnb/javascript/issues/61). ES6 모듈과 서버 사이드에서는 사용할 수 있습니다.
 
     ```javascript
     // bad
@@ -167,7 +167,7 @@
     };
     ```
 
-  - [3.3](#3.3) <a name='3.3'></a> 예약어 대신에 알기 쉬운 동의어(Readable synonyms)를 사용하세요.
+  - [3.3](#3.3) <a name='3.3'></a> 예약어 대신에 알기 쉬운 동의어(Readable Synonyms)를 사용하세요.
 
     ```javascript
     // bad
@@ -187,9 +187,9 @@
     ```
 
   <a name="es6-computed-properties"></a>
-  - [3.4](#3.4) <a name='3.4'></a> 동적인 속성 이름을 가진 객체를 만들 때에는 계산된 속성 이름(Computed property names)을 사용하세요.
+  - [3.4](#3.4) <a name='3.4'></a> 동적인 속성 이름을 가진 객체를 만들 때에는 계산된 속성 이름(Computed Property Names)을 사용하세요.
 
-    > 왜죠? 이렇게하면 객체 속성을 1개의 장소에서 정의 할 수 있습니다.
+    > 왜죠? 이렇게하면 객체 속성을 한 개의 장소에서 정의 할 수 있습니다.
 
     ```javascript
 
@@ -213,7 +213,7 @@
     ```
 
   <a name="es6-object-shorthand"></a>
-  - [3.5](#3.5) <a name='3.5'></a> 메소드에 단축 구문(Shorthand)을 사용하세요.
+  - [3.5](#3.5) <a name='3.5'></a> 메소드에 단축 구문(Object Shorthand)을 사용하세요.
 
     eslint rules: [`object-shorthand`](http://eslint.org/docs/rules/object-shorthand.html).
 
@@ -238,7 +238,7 @@
     ```
 
   <a name="es6-object-concise"></a>
-  - [3.6](#3.6) <a name='3.6'></a> 속성에 단축 구문을 사용하세요.
+  - [3.6](#3.6) <a name='3.6'></a> 속성에 단축 구문(Object Concise)을 사용하세요.
 
     > 왜죠? 표현이나 설명이 간결해지기 때문입니다.
 
@@ -258,7 +258,7 @@
     };
     ```
 
-  - [3.7](#3.7) <a name='3.7'></a> 속성의 단축 구문은 객체 선언의 시작 부분에 무리를 지어줍니다.
+  - [3.7](#3.7) <a name='3.7'></a> 속성의 단축 구문(Object Concise)은 객체 선언의 시작 부분에 무리를 지어줍니다.
 
     > 왜죠? 어떤 속성이 단축 구문을 사용하고 있는지를 알기가 쉽기 때문입니다.
 
@@ -287,7 +287,7 @@
     };
     ```
 
-  - [3.8](#3.8) <a name="3.8"></a> 이용한 속성에 작은 따옴표를 사용하는 경우는 오직 잘못된 식별자인 경우에만 사용합니다.
+  - [3.8](#3.8) <a name="3.8"></a> 속성 이름에 작은 따옴표를 사용하는 경우는 오직 잘못된 식별자(Invalid Identifiers)일 때입니다.
 
   > 왜죠? 주관적으로 쉽게 읽을 수 있는 것을 항상 고민해야 합니다. 이 것은 구문이 강조되고, 수많은 JS엔진에 쉽게 최적화되어 있습니다.
 
@@ -309,9 +309,9 @@
   };
   ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
-## Arrays
+## 배열(Arrays)
 
   - [4.1](#4.1) <a name='4.1'></a> 배열을 만들 때 리터럴 구문을 사용하세요.
 
@@ -353,18 +353,18 @@
     // good
     const itemsCopy = [...items];
     ```
-  - [4.4](#4.4) <a name='4.4'></a> array-like 객체를 배열로 변환하려면 Array#from을 사용하세요.
+  - [4.4](#4.4) <a name='4.4'></a> Array-Like 객체를 배열로 변환하려면 Array#from을 사용하세요.
 
     ```javascript
     const foo = document.querySelectorAll('.foo');
     const nodes = Array.from(foo);
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
-## Destructuring
+## 구조화 대입(Destructuring)
 
-  - [5.1](#5.1) <a name='5.1'></a> 여러 속성에서 객체에 접근할 때 객체 구조화 대입을 사용하세요.
+  - [5.1](#5.1) <a name='5.1'></a> 여러 속성에서 객체에 접근할 때 객체 구조화 대입(Destructuring)을 사용하세요.
 
     > 왜죠? 구조화 대입을 이용하여 그 속성에 대한 중간 참조를 줄일 수 있습니다.
 
@@ -389,7 +389,7 @@
     }
     ```
 
-  - [5.2](#5.2) <a name='5.2'></a> 배열의 구조 대입(Destructuring)을 사용하세요.
+  - [5.2](#5.2) <a name='5.2'></a> 배열에 구조화 대입(Destructuring)을 사용하세요.
 
     ```javascript
     const arr = [1, 2, 3, 4];
@@ -402,34 +402,34 @@
     const [first, second] = arr;
     ```
 
-  - [5.3](#5.3) <a name='5.3'></a> 여러 값을 반환하는 경우, 배열의 구조 대입이 아니라 객체의 구조 대입을 사용하세요.
+  - [5.3](#5.3) <a name='5.3'></a> 여러 값을 반환하는 경우, 배열의 구조화 대입이 아니라 객체의 구조화 대입을 사용하세요.
 
     > 왜죠? 이렇게하면 나중에 새 속성을 추가하거나 호출에 영향을 주지않고 순서를 변경할 수 있습니다.
 
     ```javascript
     // bad
     function processInput(input) {
-      // then a miracle occurs
+      // 그러면 기적이 일어난다
       return [left, right, top, bottom];
     }
 
-    // the caller needs to think about the order of return data
+    // 호출자에 반환되는 데이터의 순서를 고려해야 함
     const [left, __, top] = processInput(input);
 
     // good
     function processInput(input) {
-      // then a miracle occurs
+      // 그러면 기적이 일어난다
       return { left, right, top, bottom };
     }
 
-    // the caller selects only the data they need
+    // 호출하면서 필요한 데이터만 선택할 수 있음
     const { left, right } = processInput(input);
     ```
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
-## Strings
+## 문자열(Strings)
 
   - [6.1](#6.1) <a name='6.1'></a> 문자열에는 작은 따옴표`''`를 사용하세요.
 
@@ -443,7 +443,7 @@
     const name = 'Capt. Janeway';
     ```
 
-  - [6.2](#6.2) <a name='6.2'></a> 100자 이상의 문자열은 문자열 연결을 사용하여 여러 행에 걸쳐 기술할 수 있습니다.
+  - [6.2](#6.2) <a name='6.2'></a> 100자 이상의 문자열은 여러 행을 사용하여 연결할 수 있습니다.
   - [6.3](#6.3) <a name='6.3'></a> 주의: 문자열 연결이 많으면 성능에 영향을 줄 수 있습니다. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40).
 
     ```javascript
@@ -463,9 +463,9 @@
     ```
 
   <a name="es6-template-literals"></a>
-  - [6.4](#6.4) <a name='6.4'></a> 프로그램에서 문자열을 생성하는 경우, 문자열 연결이 아니라 template strings을 사용하세요.
+  - [6.4](#6.4) <a name='6.4'></a> 프로그램에서 문자열을 생성하는 경우, 문자열 연결이 아니라 템플릿 문자열(Template Strings)을 사용하세요.
 
-    > 왜죠? Template strings 문자열 완성 기능과 다중 문자열 기능을 가진 간결한 구문으로 가독성이 좋아지기 때문입니다.
+    > 왜죠? 템플릿 문자열의 문자열 완성 기능과 다중 문자열 기능을 가진 간결한 구문으로 가독성이 좋아지기 때문입니다.
 
     eslint rules: [`prefer-template`](http://eslint.org/docs/rules/prefer-template.html).
 
@@ -487,14 +487,14 @@
     ```
   - [6.5](#6.5) <a name='6.5'></a> 절대로 `eval()`을 사용하지 않습니다. 이것은 지금까지 수많은 취약점을 만들어 왔기 때문입니다.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Functions
+## 함수(Functions)
 
   - [7.1](#7.1) <a name='7.1'></a> 함수 선언 대신에 함수 표현식을 사용합니다.
 
-    > 왜죠? 이름이 붙은 함수 선언은 콜스택에서 쉽게 알수 있습니다. 또한 함수 선언의 몸 전체가 Hoist됩니다. 반면 함수는 참조만 Hoist됩니다. 이 규칙은 함수 부분을 항상 [Arrow Functions](#arrow-functions)로 대체 사용할 수 있습니다.
+    > 왜죠? 이름이 붙은 함수 선언은 콜스택에서 쉽게 알수 있습니다. 또한 함수 선언의 몸 전체가 Hoist됩니다. 반면 함수는 참조만 Hoist됩니다. 이 규칙은 함수 부분을 항상 [애로우 함수](#애로우-함수arrow-functions)로 대체 사용할 수 있습니다.
 
     ```javascript
     // bad
@@ -506,16 +506,16 @@
     }
     ```
 
-  - [7.2](#7.2) <a name='7.2'></a> 함수식(Function expressions):
+  - [7.2](#7.2) <a name='7.2'></a> 함수 표현식(Function expressions):
 
     ```javascript
-    // immediately-invoked function expression (IIFE)
+    // 즉시-호출(Immediately-Invoked) 함수 표현식(IIFE)
     (() => {
       console.log('Welcome to the Internet. Please follow me.');
     })();
     ```
 
-  - [7.3](#7.3) <a name='7.3'></a> 함수 이외의 블록 (if 나 while 등)에 함수를 선언하지 마세요. 브라우저는 변수에 함수를 할당하는 것을 처리할 수는 있지만, 모두 다르게 해석됩니다.
+  - [7.3](#7.3) <a name='7.3'></a> 함수 이외의 블록 (`if`나 `while` 등)에 함수를 선언하지 않습니다. 브라우저는 변수에 함수를 할당하는 처리를 할 수는 있지만, 모두 다르게 해석됩니다.
 
   - [7.4](#7.4) <a name='7.4'></a> **주의:** ECMA-262에서 `block`은 statements 목록에 정의되지만, 함수 선언은 statements가 없습니다. [이 문제는 ECMA-262의 설명을 참조하세요](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
@@ -536,7 +536,7 @@
     }
     ```
 
-  - [7.5](#7.5) <a name='7.5'></a> 매개변수(parameter)에 `arguments`를 절대 지정하지 않습니다. 이것은 함수 Scope로 전달 될 `arguments`객체의 참조를 덮어 써버릴 것입니다.
+  - [7.5](#7.5) <a name='7.5'></a> 매개변수(parameter)에 `arguments`를 절대로 지정하지 않습니다. 이것은 함수 영역으로 전달 될 `arguments`객체의 참조를 덮어 써버릴 것입니다.
 
     ```javascript
     // bad
@@ -551,9 +551,9 @@
     ```
 
   <a name="es6-rest"></a>
-  - [7.6](#7.6) <a name='7.6'></a> `arguments`를 사용하지 않습니다. 대신 rest syntax인 `...`을 사용하세요.
+  - [7.6](#7.6) <a name='7.6'></a> `arguments`를 사용하지 않습니다. 대신 레스트(Rest) 문법인 `...`을 사용하세요.
 
-    > 왜죠? `...` 를 이용하여 여러가지 매개변수를 모두 사용할 수 있습니다. 추가로 rest 매개변수인 `arguments`는 Array-like 객체가 아니라 진정한 Array입니다.
+    > 왜죠? `...` 를 이용하여 여러가지 매개변수를 모두 사용할 수 있습니다. 추가로 rest 매개변수인 `arguments`는 Array-Like 객체가 아니라 진정한 배열(Array)입니다.
 
     ```javascript
     // bad
@@ -569,7 +569,7 @@
     ```
 
   <a name="es6-default-parameters"></a>
-  - [7.7](#7.7) <a name='7.7'></a> 함수의 매개변수를 조작하지 말고 기본 매개변수를 사용하세요.
+  - [7.7](#7.7) <a name='7.7'></a> 함수의 매개변수를 조작하지 말고 기본 매개변수(Default Parameters)를 사용하세요.
 
     ```javascript
     // really bad
@@ -695,15 +695,15 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
-## Arrow Functions
+## 애로우 함수(Arrow Functions)
 
-  - [8.1](#8.1) <a name='8.1'></a> (익명 함수 통과와 같은) 함수를 이용하는 경우, Arrow 함수를 사용하세요.
+  - [8.1](#8.1) <a name='8.1'></a> 함수 표현식을 사용하는 경우(익명 함수와 같은), 애로우 함수(Arrow Functions)를 사용하세요.
 
-    > 왜죠? 애로우 함수는 함수가 실행되는 컨텍스트의 `this`를 속박합니다. 이것은 일반적으로 예상대로 작동하고 구문이 더 간결합니다.
+    > 왜죠? 애로우 함수는 함수가 실행되는 컨텍스트의 `this`를 가두어줍니다. 이것은 너무나 원했던 것이며 구문도 더욱 간결해집니다.
 
-    > 언제 쓰죠? 복잡한 함수 논리를 정의한 함수의 바깥쪽으로 이동하고 싶은 경우.
+    > 언제 쓰죠? 복잡한 함수 논리를 정의한 함수의 바깥쪽으로 이동하고 싶은 경우입니다.
 
     eslint rules: [`prefer-arrow-callback`](http://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](http://eslint.org/docs/rules/arrow-spacing.html).
 
@@ -721,7 +721,7 @@
     });
     ```
 
-  - [8.2](#8.2) <a name='8.2'></a> 함수의 본체가 하나의 식으로 구성되어있는 경우 중괄호를 생략하고 암묵적 return을 사용할 수 있습니다. 그렇지 않으면 `return` 문을 사용해야 합니다.
+  - [8.2](#8.2) <a name='8.2'></a> 함수의 본체가 하나의 표현식으로 구성되어있는 경우 중괄호`{}`를 생략하고 암묵적 return을 사용할 수 있습니다. 그렇지 않으면 `return` 문을 사용해야 합니다.
 
     > 왜죠? 가독성이 좋아지기 때문입니다. 여러 함수가 연결되는 경우에 쉽게 읽을 수 있습니다.
 
@@ -746,7 +746,7 @@
     });
     ```
 
-  - [8.3](#8.3) <a name='8.3'></a> 식의 길이가 여러 행에 걸치는 경우 가독성을 향상시키기 위해 괄호 안에 써주세요.
+  - [8.3](#8.3) <a name='8.3'></a> 구문의 길이가 여러 행에 걸치는 경우 가독성을 향상시키기 위해 괄호`()` 안에 써주세요.
 
     > 왜죠? 함수의 시작과 끝 부분을 알아보기 쉽게 합니다.
 
@@ -765,7 +765,7 @@
     ```
 
 
-  - [8.4](#8.4) <a name='8.4'></a> 함수의 인수가 1개인 경우 괄호를 생략할 수 있습니다.
+  - [8.4](#8.4) <a name='8.4'></a> 함수의 인수가 한 개인 경우 괄호`()`를 생략할 수 있습니다.
 
     > 왜죠? 시각적 혼란이 덜하기 때문입니다.
 
@@ -797,10 +797,10 @@
     });
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Constructors
+## 생성자(Constructors)
 
   - [9.1](#9.1) <a name='9.1'></a> `prototype`의 직접 조작을 피하고 항상 `class`를 사용하세요.
 
@@ -909,14 +909,14 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Modules
+## 모듈(Modules)
 
-  - [10.1](#10.1) <a name='10.1'></a> 비표준 모듈 시스템이 아니라면 항상 (`import`/`export`) 를 사용하세요. 이렇게 함으로써 원하는 모듈 시스템에 언제든지 transpile 할 수 있습니다.
+  - [10.1](#10.1) <a name='10.1'></a> 비표준 모듈 시스템이 아니라면 항상 (`import`/`export`) 를 사용하세요. 이렇게 함으로써 원하는 모듈 시스템에 언제든지 트랜스파일(Transpile) 할 수 있습니다.
 
-    > 왜죠? 모듈은 곧 미래입니다. 미래를 선점하고 사용합시다.
+    > 왜죠? 모듈은 곧 미래입니다. 미래를 선점하고 애용합시다.
 
     ```javascript
     // bad
@@ -944,9 +944,9 @@
     import AirbnbStyleGuide from './AirbnbStyleGuide';
     ```
 
-  - [10.3](#10.3) <a name='10.3'></a>import 문에서 직접 export하지 않습니다.
+  - [10.3](#10.3) <a name='10.3'></a>import 문에서 직접 추출(Export)하지 않습니다.
 
-    > 왜죠? 한개의 라인이라 간결하기는 하지만, import와 export하는 방법을 명확하게 함으로써 일관성을 유지할 수 있습니다.
+    > 왜죠? 한개의 라인이라 간결하기는 하지만, import와 export하는 방법을 명확하게 구분함으로써 일관성을 유지할 수 있습니다.
 
     ```javascript
     // bad
@@ -959,13 +959,13 @@
     export default es6;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
-## Iterators and Generators
+## 이터레이터와 제너레이터(Iterators and Generators)
 
-  - [11.1](#11.1) <a name='11.1'></a> iterators를 사용하지 않습니다. `for-of` 루프 대신  `map()`과 `reduce()`같은 Javascript의 고급 함수(higher-order functions)을 사용하세요.
+  - [11.1](#11.1) <a name='11.1'></a> 이터레이터(Iterators)를 사용하지 않습니다. `for-of` 루프 대신  `map()`과 `reduce()`같은 자바스크립트의 고급함수(higher-order functions)를 사용하세요.
 
-    > 왜죠? 이것은 immutable(불변)의 규칙을 적용합니다. 값을 반환하는 함수를 처리하는 것이 부작용을 추측하기가 더 쉽습니다.
+    > 왜죠? 이것은 불변(Immutable)의 규칙을 적용합니다. 값을 반환하는 함수를 처리하는 것이 부작용을 예측하기가 더 쉽습니다.
 
     eslint rules: [`no-iterator`](http://eslint.org/docs/rules/no-iterator.html).
 
@@ -990,16 +990,16 @@
     sum === 15;
     ```
 
-  - [11.2](#11.2) <a name='11.2'></a> 현재 generators는 사용하지 않습니다.
+  - [11.2](#11.2) <a name='11.2'></a> 현재 제너레이터(Generators)는 사용하지 않는 것이 좋습니다.
 
-    > 왜죠? ES5의 transpile이 잘 작동하지 않습니다.
+    > 왜죠? ES5에서 트랜스파일(Transpile)이 올바로 작동하지 않습니다.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Properties
+## 속성(Properties)
 
-  - [12.1](#12.1) <a name='12.1'></a> 속성에 접근하려면 점을 사용하세요.
+  - [12.1](#12.1) <a name='12.1'></a> 속성에 접근하려면 점`.`을 사용하세요.
 
     eslint rules: [`dot-notation`](http://eslint.org/docs/rules/dot-notation.html).
 
@@ -1031,10 +1031,10 @@
     const isJedi = getProp('jedi');
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Variables
+## 변수(Variables)
 
   - [13.1](#13.1) <a name='13.1'></a> 변수를 선언 할 때는 항상 `const`를 사용하세요. 그렇지 않을 경우 전역 변수로 선언됩니다. 글로벌 네임 스페이스가 오염되지 않도록 캡틴 플래닛(역자주: 환경보호와 생태를 테마로 한 슈퍼히어로 애니메이션)도 경고하고 있습니다.
 
@@ -1048,7 +1048,7 @@
 
   - [13.2](#13.2) <a name='13.2'></a> 하나의 변수 선언에 대해 하나의 `const`를 사용하세요.
 
-    > 왜죠? 이 방법은 새로운 변수를 쉽게 추가할 수 있습니다. 또한 구분 기호의 차이에 의한 `;`를 `,`로 다시금 대체하는 작업에 대해 신경쓸 필요가 없습니다.
+    > 왜죠? 이 방법은 새로운 변수를 쉽게 추가할 수 있습니다. 또한 구분 기호의 차이에 의한 `;`을 `,`로 다시금 대체하는 작업에 대해 신경쓸 필요가 없습니다.
 
     eslint rules: [`one-var`](http://eslint.org/docs/rules/one-var.html).
 
@@ -1070,7 +1070,7 @@
     const dragonball = 'z';
     ```
 
-  - [13.3](#13.3) <a name='13.3'></a> 먼저 `const`를 그룹화하고 그다음으로 `let`을 그룹화 하세요.
+  - [13.3](#13.3) <a name='13.3'></a> 먼저 `const`를 그룹화하고 그 다음으로 `let`을 그룹화 하세요.
 
     > 왜죠? 이전에 할당 된 변수에 따라 나중에 새로운 변수를 추가하는 경우에 유용하기 때문입니다.
 
@@ -1095,9 +1095,9 @@
     let length;
     ```
 
-  - [13.4](#13.4) <a name='13.4'></a> 변수를 할당할 때는 필요하고 합리적인 장소에 넣습니다.
+  - [13.4](#13.4) <a name='13.4'></a> 변수를 할당을 필요로 하는 부분에서 적당한 장소에 배치해야 합니다.
 
-    > 왜죠? `let`과 `const`는 함수 Scope에는 없는 블록 Scope이기 때문입니다.
+    > 왜죠? `let`과 `const`는 함수 범위에는 없는 블록 범위이기 때문입니다.
 
     ```javascript
     // good
@@ -1142,10 +1142,10 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Hoisting
+## 호이스팅(Hoisting)
 
   - [14.1](#14.1) <a name='14.1'></a> `var` 선언은 할당이 없는 상태로 범위(Scope)의 위로 Hoist될 수 있습니다. 하지만 `const`와 `let` 선언은 시간적 데드 존([Temporal Dead Zones (TDZ)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Temporal_dead_zone_and_errors_with_let))이라는 새로운 개념의 혜택을 받고 있습니다. 이것은 왜 typeof가 안전하지 않은가([typeof is no longer safe](http://es-discourse.com/t/why-typeof-is-no-longer-safe/15))를 알고있는 것이 중요합니다.
 
@@ -1164,7 +1164,7 @@
       var declaredButNotAssigned = true;
     }
 
-    // 인터프린터는 변수 선언을 Scope의 시작 부분에 Hoist합니다.
+    // 인터프린터는 변수 선언을 범위(Scope)의 시작부분에 Hoist합니다.
     // 위의 예는 다음과 같이 다시 작성할 수 있습니다:
     function example() {
       let declaredButNotAssigned;
@@ -1235,14 +1235,14 @@
 
   - 더 자세한 정보는 [Ben Cherry](http://www.adequatelygood.com/)의 [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting/)을 참조하세요.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Comparison Operators & Equality
+## 조건식과 등가식(Comparison Operators & Equality)
 
   - [15.1](#15.1) <a name='15.1'></a> `==`와 `!=` 보다는 `===`와 `!==`를 사용하세요.
 
-  - [15.2](#15.2) <a name='15.2'></a> `if`와 같은 조건문은 `ToBoolean`방법에 의한 강제 형 변환으로 구분되고 항상 다음과 같은 간단한 규칙을 따릅니다:
+  - [15.2](#15.2) <a name='15.2'></a> `if`와 같은 조건문은 `ToBoolean`방법에 의한 강제 형(Type) 변환으로 구분되고 항상 다음과 같은 간단한 규칙을 따릅니다:
 
     eslint rules: [`eqeqeq`](http://eslint.org/docs/rules/eqeqeq.html).
 
@@ -1286,12 +1286,12 @@
 
   - [15.4](#15.4) <a name='15.4'></a> 더 자세한 내용은 여기를 참조하세요. [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Blocks
+## 블록(Blocks)
 
-  - [16.1](#16.1) <a name='16.1'></a> 여러 줄의 블록은 중괄호를 사용합니다.
+  - [16.1](#16.1) <a name='16.1'></a> 여러 줄의 블록은 중괄호`{}`를 사용합니다.
 
     ```javascript
     // bad
@@ -1315,7 +1315,7 @@
     }
     ```
 
-  - [16.2](#16.2) <a name='16.2'></a> 여러 블록에 걸친 `if`와 `else`를 사용하는 경우, `else`는 `if`블록의 끝 중괄호와 같은 행에 두세요.
+  - [16.2](#16.2) <a name='16.2'></a> 여러 블록에 걸친 `if`와 `else`를 사용하는 경우, `else`는 `if`블록의 끝 중괄호`{}`와 같은 행에 두세요.
 
     eslint rules: [`brace-style`](http://eslint.org/docs/rules/brace-style.html).
 
@@ -1339,10 +1339,10 @@
     ```
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Comments
+## 주석(Comments)
 
   - [17.1](#17.1) <a name='17.1'></a> 여러 줄의 주석에는 `/** ... */`를 사용하세요. 그 안에는 설명과 모든 매개변수와 반환 값에 대한 형식과 값을 표기합니다.
 
@@ -1442,10 +1442,10 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Whitespace
+## 공백(Whitespace)
 
   - [18.1](#18.1) <a name='18.1'></a> 탭에 공백 2개를 설정하세요.
 
@@ -1468,7 +1468,7 @@
     }
     ```
 
-  - [18.2](#18.2) <a name='18.2'></a> 중괄호 앞에 공백을 넣어주세요.
+  - [18.2](#18.2) <a name='18.2'></a> 중괄호`{}` 앞에 공백을 넣어주세요.
 
     eslint rules: [`space-before-blocks`](http://eslint.org/docs/rules/space-before-blocks.html).
 
@@ -1496,7 +1496,7 @@
     });
     ```
 
-  - [18.3](#18.3) <a name='18.3'></a> 제어 구문(`if`, `while` 등)의 괄호 앞에 공백을 넣어주세요. 함수 선언과 함수 호출시 인수 목록 앞에는 공백을 넣지 않습니다.
+  - [18.3](#18.3) <a name='18.3'></a> 제어 구문(`if`, `while` 등)의 괄호`()` 앞에 공백을 넣어주세요. 함수 선언과 함수 호출시 인수 목록 앞에는 공백을 넣지 않습니다.
 
     eslint rules: [`space-after-keywords`](http://eslint.org/docs/rules/space-after-keywords.html), [`space-before-keywords`](http://eslint.org/docs/rules/space-before-keywords.html).
 
@@ -1558,7 +1558,7 @@
     })(this);↵
     ```
 
-  - [18.6](#18.6) <a name='18.6'></a> 메소드 체인이 길어지는 경우 적절히 들여쓰기(indentation) 하세요. 행이 메소드 호출이 아닌 새로운 문장임을 강조하기 위해 선두에 점을 배치하세요.
+  - [18.6](#18.6) <a name='18.6'></a> 메소드 체인이 길어지는 경우 적절히 들여쓰기(indentation) 하세요. 행이 메소드 호출이 아닌 새로운 문장임을 강조하기 위해 선두에 점`.`을 배치하세요.
 
     ```javascript
     // bad
@@ -1688,7 +1688,7 @@
     }
     ```
 
-  - [18.9](#18.9) <a name='18.9'></a> 괄호 안에 공백을 추가하지 않습니다.
+  - [18.9](#18.9) <a name='18.9'></a> 괄호`()` 안에 공백을 추가하지 않습니다.
 
     eslint rules: [`space-in-parens`](http://eslint.org/docs/rules/space-in-parens.html).
 
@@ -1714,7 +1714,7 @@
     }
     ```
 
-  - [18.10](#18.10) <a name='18.10'></a> 대괄호 안에 공백을 추가하지 않습니다.
+  - [18.10](#18.10) <a name='18.10'></a> 대괄호`[]` 안에 공백을 추가하지 않습니다.
 
     eslint rules: [`array-bracket-spacing`](http://eslint.org/docs/rules/array-bracket-spacing.html).
 
@@ -1728,7 +1728,7 @@
     console.log(foo[0]);
     ```
 
-  - [18.11](#18.11) <a name='18.11'></a> 중괄호 안에 공백을 추가하지 않습니다.
+  - [18.11](#18.11) <a name='18.11'></a> 중괄호`{}` 안에 공백을 추가하지 않습니다.
 
     eslint rules: [`object-curly-spacing`](http://eslint.org/docs/rules/object-curly-spacing.html).
 
@@ -1767,9 +1767,9 @@
       .fail(() => console.log('You have failed this city.'));
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
-## Commas
+## 쉼표(Commas)
 
   - [19.1](#19.1) <a name='19.1'></a> 쉼표로 시작: **제발 그만하세요.**
 
@@ -1811,7 +1811,7 @@
 
     eslint rules: [`comma-dangle`](http://eslint.org/docs/rules/comma-dangle.html).
 
-    > 왜죠? 이것은 깨끗한 git의 차이로 이어집니다. 또한 Babel관 같은 트랜스 컴파일러는 끝에 불필요한 쉼표를 알아서 제거합니다. 이것은 기존 브라우저에서 [불필요한 쉼표 문제](es5/README.md#commas)를 걱정할 필요가 없다는 것을 의미합니다.
+    > 왜죠? 이것은 git의 diff를 깨끗하게 합니다. 또한 Babel과 같은 트랜스 컴파일러는 끝에 불필요한 쉼표를 알아서 제거합니다. 이것은 기존 브라우저에서 [불필요한 쉼표 문제](es5/README.md#commas)를 걱정할 필요가 없다는 것을 의미합니다.
 
     ```javascript
     // bad - git diff without trailing comma
@@ -1852,10 +1852,10 @@
     ];
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Semicolons
+## 세미콜론(Semicolons)
 
   - [20.1](#20.1) <a name='20.1'></a> **물론 사용합시다.**
 
@@ -1883,12 +1883,12 @@
 
     [Read more](http://stackoverflow.com/questions/7365172/semicolon-before-self-invoking-function/7365214%237365214).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Type Casting & Coercion
+## 형변환과 강제(Type Casting & Coercion)
 
-  - [21.1](#21.1) <a name='21.1'></a> 문장의 시작 부분에서 형을 강제합니다.
+  - [21.1](#21.1) <a name='21.1'></a> 문장의 시작 부분에서 형(Type)을 강제합니다.
   - [21.2](#21.2) <a name='21.2'></a> String:
 
     ```javascript
@@ -1901,7 +1901,7 @@
     const totalScore = String(this.reviewScore);
     ```
 
-  - [21.3](#21.3) <a name='21.3'></a> Number: `Number`로 형 변환하려면 `parseInt`를 사용하세요. 항상 형변환을 위한 기수(radix)를 인수로 전달합니다.
+  - [21.3](#21.3) <a name='21.3'></a> Number: `Number`형으로 변환하려면 `parseInt`를 사용하세요. 항상 형변환을 위한 기수(radix)를 인수로 전달합니다.
 
     eslint rules: [`radix`](http://eslint.org/docs/rules/radix).
 
@@ -1962,10 +1962,10 @@
     const hasAge = !!age;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Naming Conventions
+## 명명 규칙(Naming Conventions)
 
   - [22.1](#22.1) <a name='22.1'></a> 하나의 문자로 구성된 이름은 피하세요. 이름에서 의도를 읽을 수 있도록 해야 합니다.
 
@@ -2033,7 +2033,7 @@
     this._firstName = 'Panda';
     ```
 
-  - [22.5](#22.5) <a name='22.5'></a> `this`에 대한 참조를 저장하지 않습니다. Arrow 함수 또는 Function#bind를 사용하세요.
+  - [22.5](#22.5) <a name='22.5'></a> `this`에 대한 참조를 저장하지 않습니다. 애로우 함수 또는 Function#bind를 사용하세요.
 
     ```javascript
     // bad
@@ -2060,7 +2060,7 @@
     }
     ```
 
-  - [22.6](#22.6) <a name='22.6'></a> 파일을 하나의 클래스로 export 할 경우 파일 이름은 클래스 이름과 정확하게 일치해야 합니다.
+  - [22.6](#22.6) <a name='22.6'></a> 파일을 하나의 클래스로 추출(Export)할 경우 파일 이름은 클래스 이름과 정확하게 일치해야 합니다.
 
     ```javascript
     // file contents
@@ -2089,7 +2089,7 @@
     export default makeStyleGuide;
     ```
 
-  - [22.8](#22.8) <a name='22.8'></a> 싱글톤(singleton) / function library / 단순한 객체(bare object)를 export하는 경우, PascalCase(대문자로 시작)를 사용하세요.
+  - [22.8](#22.8) <a name='22.8'></a> 싱글톤(singleton) / 함수 라이브러리(function library) / 단순한 객체(bare object)를 추출하는 경우, PascalCase(대문자로 시작)를 사용하세요.
 
     ```javascript
     const AirbnbStyleGuide = {
@@ -2101,10 +2101,10 @@
     ```
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Accessors
+## 액세서(Accessors)
 
   - [23.1](#23.1) <a name='23.1'></a> 속성에 대한 접근자(Accessor) 함수는 필요하지 않습니다.
   - [23.2](#23.2) <a name='23.2'></a> 접근자 함수가 필요한 경우 `getVal()`과 `setVal('hello')`로 하세요.
@@ -2137,7 +2137,7 @@
     }
     ```
 
-  - [23.4](#23.4) <a name='23.4'></a> 일관된 것이라면, `get()`과 `set()` 함수를 만들수 있습니다.
+  - [23.4](#23.4) <a name='23.4'></a> 일관된다면, `get()`과 `set()` 함수를 작성해도 좋습니다.
 
     ```javascript
     class Jedi {
@@ -2156,10 +2156,10 @@
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Events
+## 이벤트(Events)
 
   - [24.1](#24.1) <a name='24.1'></a> (DOM 이벤트, Backbone 이벤트)처럼 자신의 이벤트 페이로드 값을 전달하려면 원시값 대신 해시인수를 전달합니다. 이렇게 하면 나중에 개발자가 이벤트에 관련된 모든 핸들러를 찾아 업데이트하지 않고 이벤트 페이로드에 값을 추가할 수 있습니다. 예를 들면:
 
@@ -2174,7 +2174,7 @@
     });
     ```
 
-    이쪽이 더 선호됨:
+    보다 아래쪽이 더 선호됨:
 
     ```javascript
     // good
@@ -2187,12 +2187,12 @@
     });
     ```
 
-  **[⬆ back to top](#table-of-contents)**
+  **[⬆ 목록으로](#목차)**
 
 
 ## jQuery
 
-  - [25.1](#25.1) <a name='25.1'></a> jQuery 개체 변수 앞에 `$`를 부여합니다.
+  - [25.1](#25.1) <a name='25.1'></a> jQuery 객체 변수 앞에는 `$`로 구분합니다.
 
     ```javascript
     // bad
@@ -2252,36 +2252,36 @@
     $sidebar.find('ul').hide();
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## ECMAScript 5 Compatibility
+## ECMAScript 5 호환성(ECMAScript 5 Compatibility)
 
   - [26.1](#26.1) <a name='26.1'></a> [Kangax](https://twitter.com/kangax/)의 ES5 [호환성 표](http://kangax.github.io/es5-compat-table/)를 참조하세요.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
-## ECMAScript 6 Styles
+## ECMAScript 6 스타일(ECMAScript 6 Styles)
 
   - [27.1](#27.1) <a name='27.1'></a> 이것은 ES6 명세 링크를 모아 놓은 것입니다.
 
-1. [Arrow Functions](#arrow-functions)
-1. [Classes](#constructors)
-1. [Object Shorthand](#es6-object-shorthand)
-1. [Object Concise](#es6-object-concise)
-1. [Object Computed Properties](#es6-computed-properties)
-1. [Template Strings](#es6-template-literals)
-1. [Destructuring](#destructuring)
-1. [Default Parameters](#es6-default-parameters)
-1. [Rest](#es6-rest)
-1. [Array Spreads](#es6-array-spreads)
-1. [Let and Const](#references)
-1. [Iterators and Generators](#iterators-and-generators)
-1. [Modules](#modules)
+1. [애로우 함수(Arrow Functions)](#애로우-함수arrow-functions)
+1. [클래스(Classes)](#생성자constructors)
+1. [객체 단축 구문(Object Shorthand)](#es6-object-shorthand)
+1. [속성 단축 구문(Object Concise)](#es6-object-concise)
+1. [계산된 속성 이름(Object Computed Properties)](#es6-computed-properties)
+1. [템플릿 문자열(Template Strings)](#es6-template-literals)
+1. [구조화 대입(Destructuring)](#구조화-대입destructuring)
+1. [기본 매개변수(Default Parameters)](#es6-default-parameters)
+1. [레스트(Rest)](#es6-rest)
+1. [배열 스프레드(Array Spreads)](#es6-array-spreads)
+1. [Let과 Const(Let and Const)](#참조references)
+1. [이터레이터와 제너레이터(Iterators and Generators)](#이터레이터와-제너레이터iterators-and-generators)
+1. [모듈(Modules)](#모듈modules)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
-## Testing
+## 테스팅(Testing)
 
   - [28.1](#28.1) <a name="28.1"></a> **물론 해야 합니다.**
 
@@ -2294,15 +2294,15 @@
   - [28.2](#28.2) <a name="28.2"></a> **물론 심각하게**:
    - 대부분 테스트 프레임워크를 이용하여 테스트를 작성합니다.
    - 작은 기능의 함수를 자주 쓰고 이변이 발생할 수 있는 부분을 최소화하기 위해 노력합니다.
-   - stubs와 mocks에 주의하세요. 이 것들로 인해 테스트가 부서지기 쉽습니다.
-   - Airbnb는 [`mocha`](https://www.npmjs.com/package/mocha)를 이용하고 있습니다. 작게 분할된 개별 모듈은 [`tape`](https://www.npmjs.com/package/tape) 사용합니다.
-   - 현실에서 도달할 필요가 없어도 100%의 테스트 커버리지를 목표로하는 것이 좋습니다.
-   - 버그를 수정할 때 마다 _회귀 테스트를 씁니다_. 회귀 테스트 없는 버그 수정은 나중에 반드시 다시 깨어날 것입니다.
+   - stubs와 mocks에 주의하세요. 이 것들로 인해 테스트가 깨지기 쉽습니다.
+   - Airbnb는 [`mocha`](https://www.npmjs.com/package/mocha)를 이용하고 있습니다. 작게 분할된 개별 모듈은 [`tape`](https://www.npmjs.com/package/tape)을 사용합니다.
+   - 지금은 달성할 필요가 없어도 100%의 테스트 커버리지를 목표로하는 것이 좋습니다.
+   - 버그를 수정할 때 마다 _회귀 테스트를 씁니다_. 회귀 테스트 없는 버그 수정은 나중에 반드시 다시 출현할 것입니다.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Performance
+## 성능(Performance)
 
   - [On Layout & Web Performance](http://www.kellegous.com/j/2013/01/26/layout-performance/)
   - [String vs Array Concat](http://jsperf.com/string-vs-array-concat/2)
@@ -2313,10 +2313,10 @@
   - [Long String Concatenation](http://jsperf.com/ya-string-concat)
   - Loading...
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
 
-## Resources
+## 참고(Resources)
 
 **Learning ES6**
 
@@ -2395,9 +2395,9 @@
   - [JavaScript Jabber](https://devchat.tv/js-jabber/)
 
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
-## In the Wild
+## 기여(In the Wild)
 
   이 것은 본 스타일 가이드를 사용하는 조직의 목록입니다. 이 목록에 추가하고 싶다면, pull request를 하거나 issue를 통해 알려주세요.
 
@@ -2462,9 +2462,9 @@
   - **Zillow**: [zillow/javascript](https://github.com/zillow/javascript)
   - **ZocDoc**: [ZocDoc/javascript](https://github.com/ZocDoc/javascript)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
-## Translation
+## 번역(Translation)
 
   이 스타일 가이드는 다른 언어로도 이용할 수 있습니다.
 
@@ -2483,20 +2483,20 @@
   - ![es](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Spain.png) **Spanish**: [paolocarrasco/javascript-style-guide](https://github.com/paolocarrasco/javascript-style-guide)
   - ![th](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Thailand.png) **Thai**: [lvarayut/javascript-style-guide](https://github.com/lvarayut/javascript-style-guide)
 
-## The JavaScript Style Guide Guide
+## 자바스크립트 스타일 가이드 안내서(The JavaScript Style Guide Guide)
 
   - [Reference](https://github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide)
 
-## Chat With Us About JavaScript
+## 자바스크립트 스타일 가이드 채팅(Chat With Us About JavaScript)
 
   - Find us on [gitter](https://gitter.im/airbnb/javascript).
 
-## Contributors
+## 참여자(Contributors)
 
   - [View Contributors](https://github.com/airbnb/javascript/graphs/contributors)
 
 
-## License
+## 라이센스(License)
 
 (The MIT License)
 
@@ -2521,9 +2521,9 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
 
-## Amendments
+## 조항(Amendments)
 
 We encourage you to fork this guide and change the rules to fit your team's style guide. Below, you may list some amendments to the style guide. This allows you to periodically update your style guide without having to deal with merge conflicts.
 
