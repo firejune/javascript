@@ -2,9 +2,9 @@
 
 *React와 JSX에 대한 가장 합리적인 접근 방식*
 
-## Table of Contents
+## 목차
 
-  1. [기본 규칙(Basic Rules)](#기본-규칙basic-rules)
+  1. [기본 규칙(Basic Rules)]차기본-규칙basic-rules)
   1. [클래스 대 `React.createClass`(Class vs `React.createClass`)](#클래스-대-reactcreateclassclass-vs-reactcreateclass)
   1. [명명(Naming)](#명명naming)
   1. [선언(Declaration)](#선언declaration)
@@ -410,4 +410,4 @@
 
   eslint rules: [`react/no-is-mounted`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md).
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ 목록으로](#목차)**
