@@ -4,28 +4,28 @@
 
 ## Table of Contents
 
-  1. [Basic Rules](#basic-rules)
-  1. [Class vs `React.createClass`](#class-vs-reactcreateclass)
-  1. [Naming](#naming)
-  1. [Declaration](#declaration)
-  1. [Alignment](#alignment)
-  1. [Quotes](#quotes)
-  1. [Spacing](#spacing)
-  1. [Props](#props)
-  1. [Parentheses](#parentheses)
-  1. [Tags](#tags)
-  1. [Methods](#methods)
-  1. [Ordering](#ordering)
+  1. [기본 규칙(Basic Rules)](#기본-규칙basic-rules)
+  1. [클래스 대 `React.createClass`(Class vs `React.createClass`)](#클래스-대-reactcreateclassclass-vs-reactcreateclass)
+  1. [명명(Naming)](#명명naming)
+  1. [선언(Declaration)](#선언declaration)
+  1. [조정(Alignment)](#조정alignment)
+  1. [인용(Quotes)](#인용quotes)
+  1. [공백(Spacing)](#공백spacing)
+  1. [속성(Props)](#속성props)
+  1. [괄호(Parentheses)](#괄호parentheses)
+  1. [태그(Tags)](#태그tags)
+  1. [메소드(Methods)](#메소드methods)
+  1. [오더링(Ordering)](#오더링ordering)
   1. [`isMounted`](#ismounted)
 
-## Basic Rules
+## 기본 규칙(Basic Rules)
 
   - 하나의 파일에는 오직 하나의 React 컴포넌트를 사용합니다.
     - 그러나, 다중 [스테이트가 없는(Stateless) 또는 순수한 함수나 컴포넌트](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions)는 허용됩니다. eslint rule: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
   - 항상 JSX 문법을 사용합니다.
   - JSX파일이 아닌 다른 app에서 초기화하는 경우를 제외하고는 `React.createElement`를 사용하지 않습니다.
 
-## Class vs `React.createClass`
+## 클래스 대 `React.createClass`(Class vs `React.createClass`)
 
   - 특별한 이유로 믹스인(mixin)하는 경우를 제외하고는 `class extends React.Component`를 사용하세요.
 
@@ -47,7 +47,7 @@
     }
     ```
 
-## Naming
+## 명명(Naming)
 
   - **확장자**: React 컴포넌트는 `.jsx` 확장자를 사용합니다.
   - **파일명**: 파일명에는 PascalCase(대문자로 시작)를 사용합니다. 예), `ReservationCard.jsx`.
@@ -82,7 +82,7 @@
     import Footer from './Footer';
     ```
 
-## Declaration
+## 선언(Declaration)
 
   - `displayName`을 이용하여 컴포넌트명을 정하지 않습니다. 그대신, 참조에 의해 이름을 지정합니다.
 
@@ -98,7 +98,7 @@
     }
     ```
 
-## Alignment
+## 조정(Alignment)
 
   - JSX 구문에 따른 정렬 스타일을 사용합니다.
 
@@ -127,7 +127,7 @@
     </Foo>
     ```
 
-## Quotes
+## 인용(Quotes)
 
   - JSX 속성(attributes)에는 항상 큰 따옴표(`"`)를 사용합니다. 그러나 다른 모든 자바스크립트에는 작은 따옴표(single quotes)를 사용합니다.
 
@@ -150,7 +150,7 @@
     <Foo style={{ left: '20px' }} />
     ```
 
-## Spacing
+## 공백(Spacing)
 
   - 자신을 닫는(self-closing) 태그에는 항상 하나의 공백만을 사용합니다.
 
@@ -169,7 +169,7 @@
     <Foo />
     ```
 
-## Props
+## 속성(Props)
 
   - prop 이름은 항상 camelCase(소문자로 시작)를 사용합니다.
 
@@ -203,7 +203,7 @@
     />
     ```
 
-## Parentheses
+## 괄호(Parentheses)
 
   - JSX 태그가 감싸여(Wrap) 있어 한 줄 이상인 경우 괄호(parentheses)를 사용합니다.
 
@@ -233,7 +233,7 @@
     }
     ```
 
-## Tags
+## 태그(Tags)
 
   - 자식(children)을 가지지 않는다면 항상 자신을 닫는(self-close) 태그로 작성합니다.
 
@@ -264,7 +264,7 @@
     />
     ```
 
-## Methods
+## 메소드(Methods)
 
   - 렌더러 메소드에서 이벤트 핸들러에 바인드(Bind)가 필요한 경우에는 생성자(constructor)에서 합니다.
 
@@ -324,7 +324,7 @@
     }
     ```
 
-## Ordering
+## 오더링(Ordering)
 
   - `class extends React.Component`의 오더링(Ordering):
 
