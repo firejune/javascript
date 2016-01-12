@@ -15,7 +15,7 @@
   1. [괄호(Parentheses)](#괄호parentheses)
   1. [태그(Tags)](#태그tags)
   1. [메소드(Methods)](#메소드methods)
-  1. [오더링(Ordering)](#오더링ordering)
+  1. [호출순서(Ordering)](#호출순서ordering)
   1. [`isMounted`](#ismounted)
 
 ## 기본 규칙(Basic Rules)
@@ -324,9 +324,9 @@
     }
     ```
 
-## 오더링(Ordering)
+## 호출순서(Ordering)
 
-  - `class extends React.Component`의 오더링(Ordering):
+  - `class extends React.Component`의 호출순서(Ordering):
 
   1. `constructor`
   1. 추가적인(optional) `static` 메소드
@@ -374,7 +374,7 @@
     export default Link;
     ```
 
-  - `React.createClass`의 오더링(Ordering):
+  - `React.createClass`의 호출순서(Ordering):
 
   1. `displayName`
   1. `propTypes`
