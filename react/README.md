@@ -131,7 +131,7 @@
 
   - JSX 속성(attributes)에는 항상 큰 따옴표(`"`)를 사용합니다. 그러나 다른 모든 자바스크립트에는 작은 따옴표(single quotes)를 사용합니다.
 
-  > 왜죠? JSX 속성(attributes)은 [따옴표(quotes)의 탈출(escaped)을 포함할 수 없습니다](http://eslint.org/docs/rules/jsx-quotes). 그래서 큰 따옴표를 이용하여 `"don't"`과 같은 접속사를 쉽게 입력할 수 있습니다.
+  > 왜죠? JSX 속성(attributes)은 [따옴표(quotes)의 탈출(escaped)을 포함할 수 없습니다](http://eslint.org/docs/rules/jsx-quotes). 그래서 큰 따옴표를 이용하여 `"don't"`와 같은 접속사를 쉽게 입력할 수 있습니다.
   > 일반적으로 HTML 속성(attributes)에는 작은 따옴표 대신 큰 따옴표를 사용합니다. 그래서 JSX 속성역시 동일한 규칙이 적용됩니다.
 
   eslint rules: [`jsx-quotes`](http://eslint.org/docs/rules/jsx-quotes).
